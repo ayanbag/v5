@@ -1,0 +1,3 @@
+I"½<p><strong>Linked List</strong> is a list of elements (containing data) in which the elements are linked together. In other words, it is an ordered collection of elements. It differ from the list in the way we store elements. Unlike list, Linked List doesnâ€™t store its elements at contiguous memory locations.
+In Linked List, each link contains a connection to another link. Linked List is the second most-used data structure after array.</p>
+:ET

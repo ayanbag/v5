@@ -9,7 +9,7 @@ image: cmu-cs-self.png
 
 I am a recent engineering grad, who finished his bachelor’s degree in Electronics and Communication from **K**alyani **G**overnment **E**ngineering **C**ollege and graduated in the summer of 2021.
 
-Currently, I am working for _Tata Consultancy Services_ as **Assistant System Engineer** (ASE).
+Currently, I am working for **Tata Consultancy Services** as _Assistant System Engineer_ (ASE).
 
 
 My pronouns are **he/him/his**.
@@ -20,7 +20,7 @@ My pronouns are **he/him/his**.
 
 ---
 
-### My Research
+### My Research Interest
 My research interests include but are not limited to: **computer vision** (object detection, event detection, video tracking, object recognition, 3D pose estimation, and image restoration), **machine learning** (deep learning, optimization algorithms and deep reinforcement learning), and **generative adversarial networks** (GAN).
 
 I am also interested in robotics and systems with real world applications.
@@ -35,7 +35,7 @@ In 2017, I moved to Kalyani, India to join Kalyani Government Engineering Colleg
 
 In mid 2021, after I graduate I joined **Tata Consultancy Services** as an assistant system engineer and currently working with SAP CRM and various automation frameworks like Selenium etc. for manual and automation testing for e-commerce and retail applications
 
-In my free time, I learn whatever musical instrument I can lay my hands on including but not limited to: _Drums_, _Bansuri_ (Indian bamboo flute), keyboard, guitar and the ukulele.
+In my free time, I learn whatever musical instrument I can lay my hands on including but not limited to: Drums, Bansuri (Indian bamboo flute), keyboard, guitar and the ukulele.
 
 
 ---

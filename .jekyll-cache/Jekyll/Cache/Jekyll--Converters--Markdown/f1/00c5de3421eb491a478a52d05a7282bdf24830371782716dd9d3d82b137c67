@@ -1,0 +1,266 @@
+I"v<p><strong>Sckit-learn</strong> is a open source Python library that provides many unsupervised and supervised learning algorithms. It also  implements a range of preprocessing, cross-validation and visualization algorithms using a unified interface</p>
+
+<p>Basic example:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">neighbors</span><span class="p">,</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">preprocessing</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="p">.</span><span class="n">data</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">iris</span><span class="p">.</span><span class="n">target</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">33</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">scaler</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="p">.</span><span class="n">StandardScaler</span><span class="p">().</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X_train</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">knn</span> <span class="o">=</span> <span class="n">neighbors</span><span class="p">.</span><span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">knn</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span><span class="o">&gt;&gt;&gt;</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="important-features-of-sckit-learn">Important features of Sckit-learn</h3>
+
+<ul>
+  <li>Simple and efficient tools for data mining and data analysis.</li>
+  <li>Accessible to everybody and reusable in various contexts.</li>
+  <li>Built on the top of NumPy, SciPy, and matplotlib.</li>
+  <li>Open source, commercially usable – BSD license</li>
+</ul>
+
+<h3 id="components-of-sckit-learn">Components of Sckit-learn</h3>
+
+<p>Scikit-learn comes loaded with a lot of features. Here are a few of them to help you understand the spread:</p>
+
+<ul>
+  <li><strong>Supervised Learning algorithms</strong> : Supervised learning is the machine learning task of learning a function that maps an input to an output based on example input-output pairs. It infers a function from labeled training data consisting of a set of training examples.</li>
+  <li><strong>Unsupervised Learning Algorithms</strong> : There is a large spread of machine learning algorithms in the offering – starting from clustering, factor analysis, principal component analysis to unsupervised neural networks.</li>
+  <li><strong>Cross-validation</strong> : These are re-sampling procedure used to evaluate machine learning models on a limited data using sklearn.</li>
+  <li><strong>Feature Extraction</strong> : Scikit-learn for extracting features from images and text</li>
+</ul>
+
+<h3 id="installation-of-sckit-learn">Installation of Sckit-learn</h3>
+
+<p>Sckit-learn requires:</p>
+<ul>
+  <li>Numpy</li>
+  <li>SciPy as its dependencies</li>
+</ul>
+
+<p>Before installing Sckit-learn , ensure that <strong>Numpy</strong> and <strong>SciPy</strong> is installed in the working directory.
+The easiest way to install <strong>Sckit-learn</strong> is by using <code class="language-plaintext highlighter-rouge">pip</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="loading-the-data">Loading The Data</h2>
+
+<p>Your data needs to be numeric and stored as NumPy arrays or SciPy sparse matrices. Other types that are convertible to numeric arrays, such as Pandas DataFrame, are also acceptable.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">((</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="s">'A'</span><span class="p">,</span><span class="s">'A'</span><span class="p">,</span><span class="s">'B'</span><span class="p">,</span><span class="s">'A'</span><span class="p">,</span><span class="s">'B'</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span><span class="p">[</span><span class="n">X</span> <span class="o">&lt;</span> <span class="mf">0.7</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="training-and-testing-data">Training and Testing Data</h2>
+
+<pre><code class="language-Python">&gt;&gt;&gt; from sklearn.model_selection import train_test_split
+&gt;&gt;&gt; X_train, X_test, y_train, y_test = train_test_split(X,Y,random_state=0)
+</code></pre>
+
+<hr />
+<h2 id="preprocessing-the-data">Preprocessing The Data</h2>
+
+<p>Data Preprocessing is a step in which data gets transformed or encoded, to bring it in such a state that the machine can easily parse it. In other words, the data now can be easily interpreted by the algorithms.</p>
+
+<h3 id="standardization">Standardization</h3>
+
+<p>Standardization refers to shifting the distribution of each attribute to have a mean of zero and a standard deviation of one (unit variance).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">().</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">standardized_X</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">standardized_X_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="normalization">Normalization</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Normalizer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">scaler</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">().</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">normalized_X</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">normalized_X_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="binarization">Binarization</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Binarizer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">binarizer</span> <span class="o">=</span> <span class="n">Binarizer</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">0.0</span><span class="p">).</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">binary_X</span> <span class="o">=</span> <span class="n">binarizer</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="encoding-categorical-features">Encoding Categorical Features</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">enc</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">enc</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="n">py</span>
+</code></pre></div></div>
+
+<h3 id="imputing-missing-values">Imputing Missing Values</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Imputer</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">imp</span> <span class="o">=</span> <span class="n">Imputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s">'mean'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">imp</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="generating-polynomial-features">Generating Polynomial Features</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">poly</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">poly</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="creating-the-model">Creating the Model</h2>
+
+<h3 id="supervised-learning-estimators">Supervised Learning Estimators</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Linear</span> <span class="n">Regression</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>   
+
+<span class="n">Support</span> <span class="n">Vector</span> <span class="n">Machines</span> <span class="p">(</span><span class="n">SVM</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">svc</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s">'linear'</span><span class="p">)</span>   
+
+<span class="n">Naive</span> <span class="n">Bayes</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gnb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>   
+
+<span class="n">KNN</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">neighbors</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">knn</span> <span class="o">=</span> <span class="n">neighbors</span><span class="p">.</span><span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="unsupervised-learning-estimators">Unsupervised Learning Estimators</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Principal</span> <span class="n">Component</span> <span class="n">Analysis</span> <span class="p">(</span><span class="n">PCA</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>   
+
+<span class="n">K</span> <span class="n">Means</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">k_means</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="model-fitting">Model Fitting</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Supervised</span> <span class="n">learning</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lr</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>							<span class="c1"># Fit the model to the data
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">knn</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">svc</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>   
+
+<span class="n">Unsupervised</span> <span class="n">Learning</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">k_means</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>					<span class="c1"># Fit the model to the data
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">pca_model</span> <span class="o">=</span> <span class="n">pca</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>	<span class="c1"># Fit to data, then transform it
+</span></code></pre></div></div>
+
+<hr />
+<h2 id="prediction">Prediction</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Supervised</span> <span class="n">Estimators</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y_pred</span> <span class="o">=</span><span class="n">svc</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)))</span>	<span class="c1"># Predict labels
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">lr</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>						<span class="c1"># Predict labels
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="p">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>   			<span class="c1"># Estimate probability of a label
+</span>
+<span class="n">Unsupervised</span> <span class="n">Estimators</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">k_means</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>				<span class="c1"># Predict labels in clustering algos
+</span></code></pre></div></div>
+
+<hr />
+<h2 id="evaluating-the-models-performance">Evaluating The Model’s Performance</h2>
+
+<h3 id="classification-metrics">Classification Metrics</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">Accuracy</span> <span class="n">Score</span>
+ <span class="o">&gt;&gt;&gt;</span> <span class="n">knn</span><span class="p">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>							<span class="c1"># Estimator score method
+</span> <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>			<span class="c1"># Metric scoring functions 
+</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>  
+ 
+ <span class="n">Classification</span> <span class="n">Report</span>
+ <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>	<span class="c1"># Precision, recall, f1-score
+</span> <span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>  
+ 
+ <span class="n">Confusion</span> <span class="n">Matrix</span>
+ <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+ <span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="regression-metrics">Regression Metrics</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Mean</span> <span class="n">Absolute</span> <span class="n">Error</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>   
+
+<span class="n">Mean</span> <span class="n">Squared</span> <span class="n">Error</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>   
+
+<span class="n">R</span><span class="err">²</span> <span class="n">Score</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="clustering-metrics">Clustering Metrics</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Adjusted</span> <span class="n">Rand</span> <span class="n">Index</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">adjusted_rand_score</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">adjusted_rand_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>    
+
+<span class="n">Homogeneity</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">homogeneity_score</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">homogeneity_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>  
+
+<span class="n">V</span><span class="o">-</span><span class="n">measure</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">v_measure_score</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">metrics</span><span class="p">.</span><span class="n">v_measure_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>  
+</code></pre></div></div>
+
+<h3 id="cross-validation">Cross-Validation</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">knn</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">lr</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="tuning-the-model">Tuning The Model</h2>
+
+<h3 id="grid-search">Grid Search</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s">"n_neighbors"</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="s">"metric"</span><span class="p">:</span> <span class="p">[</span><span class="s">"euclidean"</span><span class="p">,</span> <span class="s">"cityblock"</span><span class="p">]}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">knn</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">grid</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">grid</span><span class="p">.</span><span class="n">best_score_</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">grid</span><span class="p">.</span><span class="n">best_estimator_</span><span class="p">.</span><span class="n">n_neighbors</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="randomized-parameter-optimization">Randomized Parameter Optimization</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.grid_search</span> <span class="kn">import</span> <span class="n">RandomizedSearchCV</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s">"n_neighbors"</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="s">"weights"</span><span class="p">:</span> <span class="p">[</span><span class="s">"uniform"</span><span class="p">,</span> <span class="s">"distance"</span><span class="p">]}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rsearch</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">knn</span><span class="p">,</span><span class="n">param_distributions</span><span class="o">=</span><span class="n">params</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">n_iter</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rsearch</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">rsearch</span><span class="p">.</span><span class="n">best_score_</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li><a href="https://www.datacamp.com/courses/topic:machine_learning">DataCamp</a></li>
+  <li><a href="https://machinelearningmastery.com/start-here/#python">Machine Learning Mastery</a></li>
+  <li><a href="https://towardsdatascience.com/scale-standardize-or-normalize-with-scikit-learn-6ccc7d176a02">TowardsDataScience</a></li>
+  <li><a href="https://www.analyticsvidhya.com/blog/2017/09/common-machine-learning-algorithms/">Analytics Vidya</a></li>
+</ul>
+
+:ET

@@ -1,0 +1,107 @@
+I"%<h3 id="what-is-loop-in-linked-list-">What is Loop in Linked List ?</h3>
+
+<p>Generally, the last node of a Linked List points to <strong>null</strong>, which indicates that it is end of the list. But when there is a loop in a Linked List , the last node points to some of the interval node or first node or itself. In this case with we traverse a Linked List node one by one, our traversal will never end as it is in loop</p>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/82292403-7a255f80-99c8-11ea-805c-2279f6544dd6.png" alt="Loop in Linked List" /></p>
+
+<h3 id="detection-of-loop-in-linked-list">Detection of Loop in Linked List</h3>
+
+<p>There are many ways for detecting any cycle in linked list, <strong>Floyd Cycle Detection Algorithm</strong> works better than other in terms of Time Complexity and Space Complexity. It is a pointer algorithm which uses only two pointers, which moves through the sequence. It is also called “tortoise and the hare algorithm”.</p>
+
+<ul>
+  <li><strong>Space Complexity of Floyd Cycle Detection Algorithm :</strong> O(1)</li>
+  <li><strong>Time Complexity of Floyd Cycle Detection Algorithm :</strong> O(n)</li>
+</ul>
+
+<h3 id="working-of-floyd-cycle-detection-algorithm-and-its-mathematical-proof">Working of Floyd Cycle Detection Algorithm and its Mathematical Proof</h3>
+
+<p>The logic of this algorithm can be illustrated as a race between a hare and a tortoise. Hare is always faster than a tortoise and it will always win the race against tortoise unless their is a cycle in the race track. If it exists in the race track, race will continue forever and hare will see tortoise again and again.</p>
+
+<p>Lets understand with the help of experiment :</p>
+
+<p style="text-align:center;"><img src="https://user-images.githubusercontent.com/28982255/82298242-76e2a180-99d1-11ea-9dae-33449dcbbe0e.png" alt="floyd cycle detection" /></p>
+
+<ul>
+  <li>Assuming the distance between the beginning node or head node of Linked List and starting node of the loop is <strong>a</strong></li>
+  <li>Assuming the distance between the starting node of the loop and meeting node of <em>hare</em> and <em>tortoise</em> is <strong>b</strong></li>
+  <li>Assuming the distance between the meeting node of <em>hare</em> and <em>tortoise</em> and starting node  of the loop is <strong>c</strong></li>
+</ul>
+
+<p>Tortoise moves one node at a time and the hare moves two node at same time. So, we can say when the tortoise has moved distance <strong>d</strong> , then turtle has moved pointer <strong>2d</strong>.</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code>So the length of the loop is b+c
+
+When both tortoise and hare meets, tortoise covers a distance d = a+b and
+hare covers a distace 2d = (a+b+c+b)
+
+Therefore,
+2*d = (a+b+c+b)
+d = (a+b)
+
+Now,
+=&gt; 2*d = 2*(a+b)
+=&gt; 2*(a+b) = (a+b+c+b)
+=&gt; 2*a + 2*b = a+2*b+c
+=&gt; a=c
+
+It means distance from head node to the start of loop node is same as distance between meeting point of the tortoise and hare to the starting node of loop
+</code></pre></div></div>
+
+<p>So this shows after getting meeting point, if one pointer is placed at the beginning of the list, then moving both pointer one node at a time then they will meet at the start of loop.</p>
+
+<h3 id="implementation-of-floyd-cycle-detection-algorithm">Implementation of Floyd Cycle Detection Algorithm</h3>
+
+<p>Implementation in <strong>Python</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1"># Node class
+</span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="c1"># Constructor to initialize the node object
+</span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="k">class</span> <span class="nc">LinkedList</span><span class="p">:</span>
+    <span class="c1"># Function to initialize head
+</span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="c1"># Function to insert a new node at the beginning
+</span>    <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_data</span><span class="p">):</span>
+        <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
+        <span class="n">new_node</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">new_node</span>
+    <span class="c1"># Utility function to print it the linked LinkedList
+</span>    <span class="k">def</span> <span class="nf">printList</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">temp</span><span class="p">):</span>
+            <span class="k">print</span> <span class="p">(</span><span class="n">temp</span><span class="p">.</span><span class="n">data</span><span class="p">,)</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">.</span><span class="nb">next</span>
+    <span class="k">def</span> <span class="nf">detectLoop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">slow_p</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
+        <span class="n">fast_p</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">slow_p</span> <span class="ow">and</span> <span class="n">fast_p</span> <span class="ow">and</span> <span class="n">fast_p</span><span class="p">.</span><span class="nb">next</span><span class="p">):</span>
+            <span class="n">slow_p</span> <span class="o">=</span> <span class="n">slow_p</span><span class="p">.</span><span class="nb">next</span>
+            <span class="n">fast_p</span> <span class="o">=</span> <span class="n">fast_p</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="nb">next</span>
+            <span class="k">if</span> <span class="n">slow_p</span> <span class="o">==</span> <span class="n">fast_p</span><span class="p">:</span>
+                <span class="k">print</span> <span class="p">(</span><span class="s">"Found Loop"</span><span class="p">)</span>
+                <span class="k">return</span>
+<span class="c1"># Driver program for testing
+</span><span class="n">llist</span> <span class="o">=</span> <span class="n">LinkedList</span><span class="p">()</span>
+<span class="n">llist</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">llist</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">llist</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">llist</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># Create a loop for testing
+</span><span class="n">llist</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="nb">next</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">llist</span><span class="p">.</span><span class="n">head</span>
+<span class="n">llist</span><span class="p">.</span><span class="n">detectLoop</span><span class="p">()</span>
+</code></pre></div></div>
+<p>Output :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Found Loop
+</code></pre></div></div>
+
+<h3 id="live-code">Live Code</h3>
+
+<p>Try the above code</p>
+
+<iframe height="500px" width="100%" src="https://repl.it/@ayanbag/floyd-cycle-detection?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+:ET

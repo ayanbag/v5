@@ -1,0 +1,123 @@
+I"�<p><strong>A-Star Algorithm</strong> is one of the most popular computer algorithm widely used in Path-finding and Graph Traversal. This algorithm efficiently search and plots a path between multiple nodes, or points, on the graph. It is used in various applications, such as <em>Maps</em>.</p>
+
+<p>Peter Hart, Nils Nilsson and Bertram Raphael of Stanford Research Institute (now SRI International) first published the algorithm in 1968. It can be seen as an extension of Edsger Dijkstra’s 1959 algorithm.</p>
+
+<p><strong>A-Star</strong> achieves better performance by using heuristics to guide its search. For example, on a map with many obstacles, path-finding from points <em>*A-Star</em> to <em>*A-Star</em> can be difficult. A robot, for instance, without getting much other direction, will continue until it encounters an obstacle. With **A-Star **, a robot would instead find a walkable path.</p>
+
+<h3 id="why-a-star-algorithm-">Why A-Star Algorithm ?</h3>
+
+<p><strong>A-Star</strong> is based on using heuristic method to achieve optimality and completeness, and based the Best-First Algorithm.</p>
+
+<p>When a search algorithm has the property of optimality, it means it is guaranteed to find the best possible solution. When a search algorithm has the property of completeness, it means that if a solution to a given problem exists, the algorithm is guaranteed to find it.</p>
+
+<p>Each time <strong>A-Star</strong> enters a state, it calculates the cost, f(n) (n being the neighboring node), to travel to all of the neighboring nodes, and then enters the node with the lowest value of f(n).</p>
+
+<p>The values are calculated with the following formula :</p>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/85195754-ca0e8380-b2f2-11ea-90c6-e9489433da15.png" alt="" /></p>
+
+<p>where</p>
+
+<ul>
+  <li><strong>g(n)</strong> = the value of the shortest path from the start node to node n</li>
+  <li><strong>h(n)</strong> = a heuristic approximation of the node’s value</li>
+</ul>
+
+<p>The efficiency  is highly dependent on the heuristic value h(n), and depending on the type of problem, we may need to use a different heuristic function for it to find the optimal solution.</p>
+
+<p>To understand the usage of the formula, we have to look at how the algorithm works.</p>
+
+<ul>
+  <li>Initialize the open list</li>
+  <li>Initialize the closed list put the starting node on the open list (you can leave its f at zero)</li>
+  <li>while the open list is not empty
+    <ul>
+      <li>
+        <p>find the node with the least <strong>f</strong> on the open list, call it “q”</p>
+      </li>
+      <li>
+        <p>pop q off the open list</p>
+      </li>
+      <li>
+        <p>generate q’s 8 successors and set their parents to q</p>
+      </li>
+      <li>
+        <p>for each successor</p>
+
+        <ol>
+          <li>
+            <p>if successor is the goal, stop search successor.<strong>g</strong> = q.<strong>g</strong> + distance between successor and q</p>
+
+            <p>successor.<strong>h</strong> = distance from goal to successor</p>
+
+            <p>successor.<strong>f</strong> = successor.<strong>g</strong> + successor.<strong>h</strong></p>
+          </li>
+          <li>
+            <p>if a node with the same position as successor is in the OPEN list which has a lower <strong>f</strong> than successor, skip this successor</p>
+          </li>
+        </ol>
+      </li>
+    </ul>
+
+ 	3. if a node with the same position as successor  is in the CLOSED list which has a lower f than successor, skip this successor otherwise, add  the node to the open list end (for loop)
+
+    <ul>
+      <li>push q on the closed list end (while loop)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="heuristic">Heuristic</h3>
+
+<p>To calculate the value of <strong>h</strong>, we can do two things :</p>
+
+<ul>
+  <li>Calculate the exact value of <strong>h</strong> (Time Consuming method), OR</li>
+  <li>Approximate the value of <strong>h</strong> using some heuristics (Less Time Consuming)</li>
+</ul>
+
+<p>**Exact Heuristics - **</p>
+
+<p>To calculate the exact value of <strong>h</strong> , firstly we have to pre-compute the distance between each pair of cells before running **A-Star ** algorithm.</p>
+
+<p>If there are no blocked cells, then we can just find the exact value of <strong>h</strong> without any pre-computation using Distance Formula.</p>
+
+<p>** Approximation Heuristics - **</p>
+
+<p>There are three approximation heuristics to calculate <strong>h</strong> :</p>
+
+<ol>
+  <li><strong>Manhattan Distance</strong></li>
+</ol>
+
+<p>It is the sum of absolute values of differences in the goal’s x and y coordinates and the current cell’s x and y coordinates respectively, i.e.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>h = abs (current_cell.x – goal.x) + abs (current_cell.y – goal.y) 
+</code></pre></div></div>
+<p>This type of heuristic is used, only when we allowed to move in four direction.</p>
+
+<ol>
+  <li><strong>Diagonal Distance</strong></li>
+</ol>
+
+<p>It is the maximum of absolute values of differences in the goal’s x and y coordinates and the current cell’s x and y coordinates respectively, i.e.,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> h = max { abs(current_cell.x – goal.x), abs(current_cell.y – goal.y) } 
+</code></pre></div></div>
+
+<p>It is used only when we are alowed to move in <strong>eight</strong> direction only.</p>
+
+<ol>
+  <li><strong>Euclidean Distance</strong></li>
+</ol>
+
+<p>It is the distance between the current cell and the goal cell using the distance formula.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>h = sqrt ( (current_cell.x – goal.x) ^ 2 + (current_cell.y – goal.y) ^ 2 ) 
+</code></pre></div></div>
+
+<p>It is used when we are allowed to move in <strong>all</strong> direction.</p>
+
+<p><strong>Dijkstra is a special case of A-Star Search Algorithm, where h = 0 for all nodes.</strong></p>
+
+:ET

@@ -1,0 +1,203 @@
+I"�:<p>JavaScript <strong>strict mode</strong> is a new feature in ECMAScript 5 that enables us to code a program, or a method in a “strict” operating context. It means, the errors which are being ignored by the compiler, will throw an exception message. It is a way to opt into a restricted version of JavaScript i.e implicitly opting-out of “sloppy mode”.</p>
+
+<p>For example, in non-strict mode if you initialize a variable without declaring it using the <code class="language-plaintext highlighter-rouge">var</code> keyword (e.g. <code class="language-plaintext highlighter-rouge">x = 6;</code>),  JavaScript interpreter will assume that you were referring to a global variable and if no such variable existed, it will automatically create one.</p>
+
+<hr />
+<h2 id="why-enable-javascript-strict-mode-">Why Enable JavaScript Strict Mode ?</h2>
+
+<ul>
+  <li>
+    <p>It makes easier to write “Secure” JavaScript Code.</p>
+  </li>
+  <li>
+    <p>It restrict the features that are unclear or poorly thought out.</p>
+  </li>
+  <li>
+    <p>It eliminates some <strong>JavaScript Silent Errors</strong> by changing them to throw errors.</p>
+  </li>
+  <li>
+    <p>It fixes mistake that make it difficult for JavaScript engines to perform optimization.</p>
+  </li>
+  <li>
+    <p>It prohibits the use of potential reserved words which are likely to be defined in the future version of ECMAScript.</p>
+  </li>
+</ul>
+
+<hr />
+<h2 id="invoking-javascript-strict-mode">Invoking JavaScript Strict Mode</h2>
+
+<p>Strict Mode can be invoked / enabled by two different ways  by using <code class="language-plaintext highlighter-rouge">use strict</code>:</p>
+<ul>
+  <li>can be defined in the global scope for the entire script</li>
+  <li>can be defined in individual function</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span> <span class="c1">//....To invoke Strict Mode</span>
+
+<span class="c1">//.....Some JS Code</span>
+
+</code></pre></div></div>
+
+<p>OR</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span> <span class="c1">//....To invoke Strict Mode</span>
+
+  <span class="c1">// ...your code...</span>
+<span class="p">})()</span>
+</code></pre></div></div>
+
+<p><strong>NOTE</strong> : Ensure that <code class="language-plaintext highlighter-rouge">'use strict';</code> is at the top of the whole script or at the beginning of the function. Otherwise Strict mode may not be enabled. Only Comments appear before <code class="language-plaintext highlighter-rouge">'use strict';</code> .</p>
+
+<hr />
+<h2 id="javascript-strict-mode-support">JavaScript Strict Mode Support</h2>
+
+<p>Every modern browser such as chrome, Firefox, opera, etc. and node supports and has supported strict mode for years. It is very safe feature to use. If the browser does not support strict mode the expression is simply ignored. It is just a string followed by a semi-colon, a perfectly legal JavaScript statement.</p>
+
+<hr />
+<h2 id="general-restriction-of-strict-mode">General Restriction of Strict Mode</h2>
+
+<p>Strict Mode changes both syntax and runtime behavior. The following general restriction will be enforced if we enable Strict mode :</p>
+
+<h3 id="undeclared-variable-are-not-allowed">Undeclared Variable are Not Allowed</h3>
+
+<p>In strict mode, all variable should be declared. If you assign a undeclared variable it will throw a ReferenceError.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"use strict";
+
+function strict() {
+    msg = "Hello World!"; // ReferenceError: msg is not defined
+    return msg;
+}
+console.log(strict());
+</code></pre></div></div>
+
+<h3 id="deleting-a-function-or-variable-is-not-allowed">Deleting a function or variable is not allowed</h3>
+
+<p>In Strict Mode, if you try to delete a variable or a function, a syntax error will be thrown.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">per</span> <span class="o">=</span> <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">John</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">78</span><span class="p">};</span>
+<span class="k">delete</span> <span class="nx">per</span><span class="p">;</span> <span class="c1">// SyntaxError</span>
+</code></pre></div></div>
+<p>Similarly, when you try to delete a function in strict mode you will get an syntax error:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">sub</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">delete</span> <span class="nx">sum</span><span class="p">;</span> <span class="c1">// SyntaxError</span>
+
+</code></pre></div></div>
+
+<h3 id="duplicating-a-parameter-is-not-allowed">Duplicating a parameter is not allowed</h3>
+
+<p>In strict mode, if a function declaration has two or more parameters with same name, a syntax error will be thrown.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">square</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// SyntaxError</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">square</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+
+</code></pre></div></div>
+
+<h3 id="the-eval-and-arguments-cannot-be-used-as-identifiers">The eval and arguments cannot be used as Identifiers</h3>
+
+<p>In strict mode, <code class="language-plaintext highlighter-rouge">eval</code> and <code class="language-plaintext highlighter-rouge">arguments</code> are treated like keywords , so it cannot be used as a variable names, function names and or as parameter names.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nb">eval</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// SyntaxError</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">eval</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="with-statement-is-not-allowed">“with” statement is not allowed</h3>
+
+<p>In strict mode, the <code class="language-plaintext highlighter-rouge">with</code> statement is not allowed. The <code class="language-plaintext highlighter-rouge">with</code> statement adds the properties and methods of the object to the current scope. So, the statements nested inside the <code class="language-plaintext highlighter-rouge">with</code> statement can call the properties and methods of the object directly without referring it.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">radius</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kd">with</span><span class="p">(</span><span class="nb">Math</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// SyntaxError</span>
+    <span class="kd">var</span> <span class="nx">area</span> <span class="o">=</span> <span class="nx">PI</span> <span class="o">*</span> <span class="nx">radius</span> <span class="o">*</span> <span class="nx">radius</span><span class="p">;</span>
+<span class="p">}</span> 
+</code></pre></div></div>
+
+<h3 id="octal-literals-and-escaped-characters-not-allowed">Octal Literals and Escaped Characters Not Allowed</h3>
+
+<p>In strict mode, octal numbers (numbers prefixed with a zero e.g. 010, 0377) are not allowed, though it is supported by all modern browser in non-strict mode.</p>
+
+<p>Strict mode forces you to be more explicit with this declaration by requiring a leading 0o in front of the octal value.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">010</span><span class="p">;</span>     <span class="c1">// SyntaxError</span>
+<span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="dl">"</span><span class="se">\</span><span class="s2">010</span><span class="dl">"</span>   <span class="c1">// SyntaxError</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">r</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h3 id="the-eval-method-cannot-alter-scope">The eval Method Cannot Alter Scope</h3>
+
+<p>For security reason, code passed to <code class="language-plaintext highlighter-rouge">eval()</code> cannot declare/modify variables or define function in surrounding scope.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nb">eval</span><span class="p">(</span><span class="dl">"</span><span class="s2">var x = 5;</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// ReferenceError: x is not defined</span>
+</code></pre></div></div>
+
+<h3 id="cant-write-to-read-only-properties">Can’t Write to Read-Only Properties</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span> 
+<span class="kd">var</span> <span class="nx">objX</span> <span class="o">=</span> <span class="p">{},</span> 
+<span class="nx">objY</span> <span class="o">=</span> <span class="p">{</span><span class="kd">get</span> <span class="nx">x</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="mi">0</span><span class="p">}</span> <span class="p">};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">objX</span><span class="p">,</span> <span class="dl">"</span><span class="s2">x</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">value</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="na">writable</span><span class="p">:</span><span class="kc">false</span>
+<span class="p">});</span>
+
+<span class="nx">objX</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span> <span class="c1">// This will cause an error</span>
+
+<span class="nx">objY</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span> <span class="c1">// This will cause an error</span>
+</code></pre></div></div>
+
+<h3 id="future-keywords-cannot-be-used-in-strict-mode">Future Keywords cannot be used in Strict Mode</h3>
+
+<p>As per the latest ECMAScript 6 (or ES6) standards, these keywords are reserved keywords when they are found in strict mode code:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">await</code></li>
+  <li><code class="language-plaintext highlighter-rouge">implements</code></li>
+  <li><code class="language-plaintext highlighter-rouge">interface</code></li>
+  <li><code class="language-plaintext highlighter-rouge">package</code></li>
+  <li><code class="language-plaintext highlighter-rouge">private</code></li>
+  <li><code class="language-plaintext highlighter-rouge">protected</code></li>
+  <li><code class="language-plaintext highlighter-rouge">public</code></li>
+  <li><code class="language-plaintext highlighter-rouge">static</code></li>
+  <li><code class="language-plaintext highlighter-rouge">let</code></li>
+  <li><code class="language-plaintext highlighter-rouge">yield</code></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="kd">let</span> <span class="o">=</span> <span class="mi">1500</span><span class="p">;</span>      <span class="c1">// This will cause an error </span>
+
+</code></pre></div></div>
+
+<hr />
+<h2 id="wrapping-script-mode">Wrapping Script Mode</h2>
+
+<p>Strict mode is a way to ensure your code is clean and free from common syntax errors. By using Strict Mode in JavaScript, you will able to find and fix common coding mistakes and 
+typos.</p>
+
+<hr />
+<h2 id="references">References:</h2>
+
+<ul>
+  <li><a href="https://es5.github.io/">ECMAScript 5</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">Mozilla</a></li>
+</ul>
+
+:ET

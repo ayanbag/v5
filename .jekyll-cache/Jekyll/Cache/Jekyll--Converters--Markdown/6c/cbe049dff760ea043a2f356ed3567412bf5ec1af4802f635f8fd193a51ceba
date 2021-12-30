@@ -1,0 +1,59 @@
+I"š<p><strong>Sieve of Eratosthenes</strong> is a simple and ancient algorithm to find thr prime number up to a given limit. This is one of the most efficient algorithm to find small prime numbers. This algorithm for collecting primes numbers is invented by Eratosthenes (276 - 194 BC).</p>
+
+<p><strong>Time Complexity</strong> of Sieve of Eratosthenes : O(n log(log n))</p>
+
+<p>For the given value of n, the algorithm works iteratively making the multiples of primes as composite, starting from 2. Once all the multiple of 2 have been marked as composite, the multiple of the next prime, i.e 3 are marked composite. This process go on until</p>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/82886000-89298600-9f63-11ea-881d-8bf30b6c0eb7.png" alt="955558e6ac3d6a1c1bc8d3c8b8534aca 1" /></p>
+
+<p>where p is a prime number.</p>
+
+<h3 id="working-of-sieve-of-eratosthenes-algorithm">Working of Sieve of Eratosthenes Algorithm</h3>
+
+<p>Here in the algorithm, 0 is represent as a composite number.</p>
+
+<ul>
+  <li>To find all the prime number up-to <strong>n</strong> , we have to generate a list of integers from <strong>2 to n</strong>. [Because the first and smallest prime number is 2]</li>
+  <li>Initially, let p equal 2, the first prime number.</li>
+  <li>Now we have to mark all the multiple of p which are less than n as composite, i.e replacing the number in the generated list with 0 <strong>except p itself</strong>.</li>
+  <li>Assign the value of p to the next prime number.</li>
+  <li>Repeat the process until</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/82886000-89298600-9f63-11ea-881d-8bf30b6c0eb7.png" alt="955558e6ac3d6a1c1bc8d3c8b8534aca 1" /></p>
+
+<p>When the algorithm terminates, all the numbers in the list that are not marked are prime.</p>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/82891130-deb56100-9f6a-11ea-8743-09d63deb4765.gif" alt="soe1" /></p>
+
+<h3 id="implementation-with-an-example">Implementation with an Example</h3>
+
+<p>Problem :  Generate all the primes less than 11</p>
+
+<p>Solution :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># n is any arbitrary integer
+</span><span class="n">List</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span> <span class="c1"># add numbers from 2 to n - 1 to List
+</span>    <span class="n">List</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># note the above statement is equivalent to List = range(2, n)
+</span><span class="n">p</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># p is a prime
+</span><span class="k">while</span> <span class="ow">not</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span> <span class="c1"># continue to mark out primes until square root of p is less than n
+</span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span> <span class="c1"># remove all the multiples of p
+</span>        <span class="n">List</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">p</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">p</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">List</span><span class="p">)</span> <span class="ow">and</span> <span class="n">List</span><span class="p">[</span><span class="n">p</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># assign p to the next prime. Next prime is the next non zero number in the list
+</span>        <span class="n">p</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">List</span><span class="p">:</span> <span class="c1"># search for non zero or prime numbers in the list and print them
+</span>    <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="live-code">Live Code</h3>
+
+<p>Try the above code</p>
+
+<iframe height="500px" width="100%" src="https://repl.it/@ayanbag/seive?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+:ET

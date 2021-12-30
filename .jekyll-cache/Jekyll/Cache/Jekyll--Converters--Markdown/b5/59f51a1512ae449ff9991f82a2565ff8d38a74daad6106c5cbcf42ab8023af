@@ -1,0 +1,2 @@
+I"Y<p>Like multiprocessing, multithreading is a way of achieving multitasking. Most of the code we write in Python is single threaded. A python virtual machine runs behind the scene uses a thread called the <strong>main thread</strong> i.e <code class="language-plaintext highlighter-rouge">main()</code> to execute the code which has written.</p>
+:ET
