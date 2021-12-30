@@ -14,14 +14,14 @@ Currently, I am working for _Tata Consultancy Services_ as **Assistant System En
 
 My pronouns are **he/him/his**.
 
-<br/>
+---
 
 <p style="text-align:center;"><img src="../assets/img/exp.png" alt="Logo"></p>
 
 ---
 
 ### My Research
-My research interests include but are not limited to: computer vision (object detection, event detection, video tracking, object recognition, 3D pose estimation, and image restoration), machine learning (deep learning, optimization algorithms and deep reinforcement learning), and Generative Adversarial Networks (GAN).
+My research interests include but are not limited to: **computer vision** (object detection, event detection, video tracking, object recognition, 3D pose estimation, and image restoration), **machine learning** (deep learning, optimization algorithms and deep reinforcement learning), and **generative adversarial networks** (GAN).
 
 I am also interested in robotics and systems with real world applications.
 
@@ -43,5 +43,4 @@ In my free time, I learn whatever musical instrument I can lay my hands on inclu
 ### News
 
 <span style="color:brown">**[Aug 2021]**</span> &ensp; Joined Tata Consultancy Services as an Assistant System Engineer (ASE)
-
 

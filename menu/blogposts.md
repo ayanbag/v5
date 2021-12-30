@@ -1,8 +1,9 @@
 ---
 layout: archive
-title: Blogposts
-permalink: /blogposts
+title: Blogs
+permalink: /blogs
 ---
+
 
 
 

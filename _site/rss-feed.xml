@@ -7,130 +7,144 @@
 		<atom:link href="/rss-feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
-				<title>Graduate journey at CMU!</title>
+				<title>What is A-Star Algorithm ?</title>
 				
-					<dc:creator>Abhi</dc:creator>
+					<dc:creator>Ayan Bag</dc:creator>
 				
 				
-					<description>&lt;p&gt;Hi, I am Abhi and this is my new website. Seems empty? It is.&lt;/p&gt;
+					<description>&lt;p&gt;&lt;strong&gt;A-Star Algorithm&lt;/strong&gt; is one of the most popular computer algorithm widely used in Path-finding and Graph Traversal. This algorithm efficiently search and plots a path between multiple nodes, or points, on the graph. It is used in various applications, such as &lt;em&gt;Maps&lt;/em&gt;.&lt;/p&gt;
 </description>
 				
-				<pubDate>Fri, 24 Dec 2021 00:00:00 +0530</pubDate>
-				<link>http://localhost:4000/news/2021-12-24-news-cmu</link>
-				<guid isPermaLink="true">http://localhost:4000/news/2021-12-24-news-cmu</guid>
+				<pubDate>Sat, 20 Jun 2020 00:00:00 +0530</pubDate>
+				<link>http://localhost:4000/a-star-algorithms</link>
+				<guid isPermaLink="true">http://localhost:4000/a-star-algorithms</guid>
 			</item>
 		
 			<item>
-				<title>Hey Siri, see you in the summer!</title>
+				<title>Unbeatable Tic-Tac-Toe with Minimax Algorithm</title>
 				
-					<dc:creator>Abhi</dc:creator>
+					<dc:creator>Ayan Bag</dc:creator>
 				
 				
-					<description>&lt;hr /&gt;
-&lt;p&gt;Dear Internet,&lt;/p&gt;
+					<description>&lt;p&gt;Since the advent of Artificial Algorithms, the game playing has been one of the most interesting part of Artificial Intelligence. In 1947, a computer named “Deep Blue” defeated reigning world chess champion Garry Kasprov is a defining moment in the history of AI. But the great minds behind this computer started investing and publishing in this subject nearly six decades earlier. &lt;strong&gt;Alan Turing&lt;/strong&gt; known as the father of theoretical algorithm and artificial intelligence is credited with provoking the investigation dating all the way back to the 1940s.&lt;/p&gt;
 </description>
 				
-				<pubDate>Fri, 24 Dec 2021 00:00:00 +0530</pubDate>
-				<link>http://localhost:4000/news/2021-12-24-apple-intern</link>
-				<guid isPermaLink="true">http://localhost:4000/news/2021-12-24-apple-intern</guid>
+				<pubDate>Tue, 02 Jun 2020 00:00:00 +0530</pubDate>
+				<link>http://localhost:4000/minimax-algorithm</link>
+				<guid isPermaLink="true">http://localhost:4000/minimax-algorithm</guid>
 			</item>
 		
 			<item>
-				<title>A glance into the MIIS socials!</title>
+				<title>Sieve of Eratosthenes Algorithm - the ancient algorithm</title>
 				
-					<dc:creator>Abhi</dc:creator>
+					<dc:creator>Ayan Bag</dc:creator>
 				
 				
-					<description>&lt;p&gt;08/23/2021: An impromptu MIIS gathering at Schenley Plaza right after orientation.&lt;/p&gt;
+					<description>&lt;p&gt;&lt;strong&gt;Sieve of Eratosthenes&lt;/strong&gt; is a simple and ancient algorithm to find thr prime number up to a given limit. This is one of the most efficient algorithm to find small prime numbers. This algorithm for collecting primes numbers is invented by Eratosthenes (276 - 194 BC).&lt;/p&gt;
 </description>
 				
-				<pubDate>Fri, 24 Dec 2021 00:00:00 +0530</pubDate>
-				<link>http://localhost:4000/posts/2021-12-24-miis-gsa</link>
-				<guid isPermaLink="true">http://localhost:4000/posts/2021-12-24-miis-gsa</guid>
+				<pubDate>Tue, 26 May 2020 00:00:00 +0530</pubDate>
+				<link>http://localhost:4000/sieve-of-eratothenes-algo</link>
+				<guid isPermaLink="true">http://localhost:4000/sieve-of-eratothenes-algo</guid>
 			</item>
 		
 			<item>
-				<title>My first semester at CMU</title>
+				<title>Floyd Cycle Detection Algorithm</title>
 				
-					<dc:creator>Abhi</dc:creator>
+					<dc:creator>Ayan Bag</dc:creator>
 				
 				
-					<description>&lt;p&gt;Hi, I am Abhi and this is my new website. Seems empty? It is.&lt;/p&gt;
+					<description>&lt;h3 id=&quot;what-is-loop-in-linked-list-&quot;&gt;What is Loop in Linked List ?&lt;/h3&gt;
 </description>
 				
-				<pubDate>Fri, 24 Dec 2021 00:00:00 +0530</pubDate>
-				<link>http://localhost:4000/blog/2021-12-24-fall-2021</link>
-				<guid isPermaLink="true">http://localhost:4000/blog/2021-12-24-fall-2021</guid>
+				<pubDate>Tue, 19 May 2020 00:00:00 +0530</pubDate>
+				<link>http://localhost:4000/floyd-cycle-detection-algorithm</link>
+				<guid isPermaLink="true">http://localhost:4000/floyd-cycle-detection-algorithm</guid>
 			</item>
 		
 			<item>
-				<title>Welcome to Lagrange!</title>
+				<title>Ramer–Douglas–Peucker Algorithm</title>
 				
-					<dc:creator>Paul Le</dc:creator>
+					<dc:creator>Ayan Bag</dc:creator>
 				
 				
-					<description>&lt;p&gt;Lagrange is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused blogging platform for your personal site or blog. Below you can find everything you need to get started.&lt;/p&gt;
+					<description>&lt;p&gt;The &lt;strong&gt;Ramer–Douglas–Peucker Algorithm&lt;/strong&gt; is a an algorithms that reduce the number of points that is approximated by a series of points. It is also known as the &lt;strong&gt;Douglas–Peucker algorithm&lt;/strong&gt; and &lt;strong&gt;iterative end-point fit algorithm&lt;/strong&gt;. In simple words, it represent a complex line with fewer points in a visually proper way.&lt;/p&gt;
 </description>
 				
-				<pubDate>Fri, 01 Jan 2016 00:00:00 +0530</pubDate>
-				<link>http://localhost:4000/journal/2016-01-01-welcome-to-lagrange</link>
-				<guid isPermaLink="true">http://localhost:4000/journal/2016-01-01-welcome-to-lagrange</guid>
+				<pubDate>Sat, 16 May 2020 00:00:00 +0530</pubDate>
+				<link>http://localhost:4000/rdp-algo</link>
+				<guid isPermaLink="true">http://localhost:4000/rdp-algo</guid>
 			</item>
 		
 			<item>
-				<title>Getting Started</title>
+				<title>Understanding Linked List in Python</title>
 				
-					<dc:creator>Paul Le</dc:creator>
+					<dc:creator>Ayan Bag</dc:creator>
 				
 				
-					<description>&lt;h1 id=&quot;lagrange&quot;&gt;Lagrange&lt;/h1&gt;
+					<description>&lt;p&gt;&lt;strong&gt;Linked List&lt;/strong&gt; is a list of elements (containing data) in which the elements are linked together. In other words, it is an ordered collection of elements. It differ from the list in the way we store elements. Unlike list, Linked List doesn’t store its elements at contiguous memory locations.
+In Linked List, each link contains a connection to another link. Linked List is the second most-used data structure after array.&lt;/p&gt;
 </description>
 				
-				<pubDate>Sat, 10 Oct 2015 00:00:00 +0530</pubDate>
-				<link>http://localhost:4000/getting-started</link>
-				<guid isPermaLink="true">http://localhost:4000/getting-started</guid>
+				<pubDate>Sun, 26 Apr 2020 00:00:00 +0530</pubDate>
+				<link>http://localhost:4000/linked-list</link>
+				<guid isPermaLink="true">http://localhost:4000/linked-list</guid>
 			</item>
 		
 			<item>
-				<title>Text Formatting Examples</title>
+				<title>Why to use Strict Mode in JavaScript ?</title>
 				
-					<dc:creator>Paul Le</dc:creator>
+					<dc:creator>Ayan Bag</dc:creator>
 				
 				
-					<description>&lt;h1 id=&quot;markdown-support&quot;&gt;Markdown Support&lt;/h1&gt;
+					<description>&lt;p&gt;JavaScript &lt;strong&gt;strict mode&lt;/strong&gt; is a new feature in ECMAScript 5 that enables us to code a program, or a method in a “strict” operating context. It means, the errors which are being ignored by the compiler, will throw an exception message. It is a way to opt into a restricted version of JavaScript i.e implicitly opting-out of “sloppy mode”.&lt;/p&gt;
 </description>
 				
-				<pubDate>Wed, 01 Jan 2014 00:00:00 +0530</pubDate>
-				<link>http://localhost:4000/text-formatting-examples</link>
-				<guid isPermaLink="true">http://localhost:4000/text-formatting-examples</guid>
+				<pubDate>Mon, 20 Apr 2020 00:00:00 +0530</pubDate>
+				<link>http://localhost:4000/strict-mode-in-js</link>
+				<guid isPermaLink="true">http://localhost:4000/strict-mode-in-js</guid>
 			</item>
 		
 			<item>
-				<title>Learning Resources</title>
+				<title>Kickstart to Machine Learning with Sckit-learn</title>
 				
-					<dc:creator>Paul Le</dc:creator>
+					<dc:creator>Ayan Bag</dc:creator>
 				
 				
-					<description>&lt;p&gt;The beauty of computer programming is that you do not need to formally go to school to learn how to program. You can learn almost everything that you would need to know online, and for free. The following resources are some that I have used personally, that I highly recommend, for anyone looking to learn more about computer programming.&lt;/p&gt;
+					<description>&lt;p&gt;&lt;strong&gt;Sckit-learn&lt;/strong&gt; is a open source Python library that provides many unsupervised and supervised learning algorithms. It also  implements a range of preprocessing, cross-validation and visualization algorithms using a unified interface&lt;/p&gt;
 </description>
 				
-				<pubDate>Thu, 10 Oct 2013 00:00:00 +0530</pubDate>
-				<link>http://localhost:4000/learning-resources</link>
-				<guid isPermaLink="true">http://localhost:4000/learning-resources</guid>
+				<pubDate>Sun, 19 Apr 2020 00:00:00 +0530</pubDate>
+				<link>http://localhost:4000/sckit-learn</link>
+				<guid isPermaLink="true">http://localhost:4000/sckit-learn</guid>
 			</item>
 		
 			<item>
-				<title>About the Author</title>
+				<title>Introduction to Multi-threading in Python</title>
 				
-					<dc:creator>Abhi</dc:creator>
+					<dc:creator>Ayan Bag</dc:creator>
 				
 				
-					<description>&lt;p&gt;Hi, I am Abhi and this is my new website. Seems empty? It is.&lt;/p&gt;
+					<description>&lt;p&gt;Like multiprocessing, multithreading is a way of achieving multitasking. Most of the code we write in Python is single threaded. A python virtual machine runs behind the scene uses a thread called the &lt;strong&gt;main thread&lt;/strong&gt; i.e &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main()&lt;/code&gt; to execute the code which has written.&lt;/p&gt;
 </description>
 				
-				<pubDate>Thu, 04 Apr 2013 00:00:00 +0530</pubDate>
-				<link>http://localhost:4000/about-the-author</link>
-				<guid isPermaLink="true">http://localhost:4000/about-the-author</guid>
+				<pubDate>Tue, 30 Apr 2019 00:00:00 +0530</pubDate>
+				<link>http://localhost:4000/multi-threading</link>
+				<guid isPermaLink="true">http://localhost:4000/multi-threading</guid>
+			</item>
+		
+			<item>
+				<title>A Sweet Introduction to R Programming</title>
+				
+					<dc:creator>Ayan Bag</dc:creator>
+				
+				
+					<description>&lt;p&gt;R is a open source and very popular programming language and environment for statistical computer and graphics.R was designed by statisticians and was specialized for statistical computing, and thus is known as the &lt;strong&gt;lingua franca of statistics&lt;/strong&gt;. It is mostly used in Data Science and Machine Learning. It is managed by R core development team — team of volunteer developer from across the globe. R provide a wide variety of statistical and graphical techniques and highly extensible.It was developed at Bell Laboratories by John Chambers and colleagues.R is a consolidated environment for performing statistical operation and generating R data analysis reports in graphical or text formats.&lt;/p&gt;
+</description>
+				
+				<pubDate>Sat, 27 Oct 2018 00:00:00 +0530</pubDate>
+				<link>http://localhost:4000/intro-to-r</link>
+				<guid isPermaLink="true">http://localhost:4000/intro-to-r</guid>
 			</item>
 		
 	</channel>

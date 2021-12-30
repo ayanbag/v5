@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+  <head>
+  <!-- <title>
+    
+      Ramer–Douglas–Peucker Algorithm | ayanbag
+    
+  </title> -->
+  <title>
+    
+      Ramer–Douglas–Peucker Algorithm
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ayanbag" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="ayanbag |   ase @ tcs"/>
+  //-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      });
+  </script>
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Ramer–Douglas–Peucker Algorithm | ayanbag</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Ramer–Douglas–Peucker Algorithm" />
+<meta name="author" content="Ayan Bag" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The Ramer–Douglas–Peucker Algorithm is a an algorithms that reduce the number of points that is approximated by a series of points. It is also known as the Douglas–Peucker algorithm and iterative end-point fit algorithm. In simple words, it represent a complex line with fewer points in a visually proper way." />
+<meta property="og:description" content="The Ramer–Douglas–Peucker Algorithm is a an algorithms that reduce the number of points that is approximated by a series of points. It is also known as the Douglas–Peucker algorithm and iterative end-point fit algorithm. In simple words, it represent a complex line with fewer points in a visually proper way." />
+<link rel="canonical" href="http://localhost:4000/rdp-algo" />
+<meta property="og:url" content="http://localhost:4000/rdp-algo" />
+<meta property="og:site_name" content="ayanbag" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-16T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Ramer–Douglas–Peucker Algorithm" />
+<script type="application/ld+json">
+{"headline":"Ramer–Douglas–Peucker Algorithm","dateModified":"2020-05-16T00:00:00+05:30","datePublished":"2020-05-16T00:00:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/rdp-algo"},"author":{"@type":"Person","name":"Ayan Bag"},"url":"http://localhost:4000/rdp-algo","@type":"BlogPosting","description":"The Ramer–Douglas–Peucker Algorithm is a an algorithms that reduce the number of points that is approximated by a series of points. It is also known as the Douglas–Peucker algorithm and iterative end-point fit algorithm. In simple words, it represent a complex line with fewer points in a visually proper way.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+  <h3 class="header-title">
+    <!--<img src="../favicon.ico" alt="Myself." width="30">-->
+    <a href="/">Ayan Bag</a>
+    <small class="header-subtitle">  ase @ tcs</small>
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/about.html">About</a>
+    
+      <a href="/projects.html">Projects</a>
+    
+      <a href="/publications.html">Publications</a>
+    
+      <a href="/../assets/resume.pdf">Resume</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://scholar.google.com/citations?user=IIdc_5gAAAAJ&hl=en" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.github.com/ayanbag" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="http://www.linkedin.com/in/ayanbag/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:ayanbag9474@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  </nav> 
+</div>
+
+  </h3>
+</header>
+
+      <div class="content-container">
+        <h1>
+  Ramer–Douglas–Peucker Algorithm
+</h1>
+
+<article>
+  <p>The <strong>Ramer–Douglas–Peucker Algorithm</strong> is a an algorithms that reduce the number of points that is approximated by a series of points. It is also known as the <strong>Douglas–Peucker algorithm</strong> and <strong>iterative end-point fit algorithm</strong>. In simple words, it represent a complex line with fewer points in a visually proper way.</p>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/82112521-2c5feb80-976b-11ea-8dbe-9b59d4b922ad.png" alt="503cdff1-influxdata1" />
+<em>Original dataset (right) and reduced output (left) from Ramer-Douglas-Peucker Algorithm. Image from NAMEKDEV.</em></p>
+
+<h3 id="overview">Overview</h3>
+
+<p>The main purpose of this algorithm is to find a similar curve with fewer points for a given curve composed of line segments (also called <strong>Polylines</strong>). This algorithm define ‘disimilar’ based on the maxium distance between the original curve and the simplied curve, i.e. the Hausdroff Distance. The simplified curve consist of a subset of points that defined the original curve. The Ramer–Douglas–Peucker Algorithm is most commonly used in geospatial visualizations, like Google Maps, but also useful for other in-browser visualizations as well.</p>
+
+<h3 id="working-of-ramerdouglaspeucker-algorithm">Working of Ramer–Douglas–Peucker Algorithm</h3>
+
+<p>In order to use this algorithms, the user must the epsilon ( ε ), a threshold limit that is used to determine which point to determine and discard, and it should be a value greater than zero.</p>
+
+<p><strong>Step-1</strong> :  This algorithms stored the first and the last point of the curve and then it draws the shortest line from the bookend points.</p>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/82113093-e3129a80-9770-11ea-8a47-96a5d8038546.png" alt="c3044882-influxdata3" /></p>
+
+<p><strong>Step-2</strong>:  Its determine the point farthest point from the line segment with the first and last points as end points.</p>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/82113113-fcb3e200-9770-11ea-828b-7b90e7a3db5e.png" alt="473bcfba-influxdata4" /></p>
+
+<p><strong>Step-3</strong>: Any points within the epsilon distance from this line will be removed and the approximation will be drawn.</p>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/82113127-17865680-9771-11ea-9eee-734a77da4f58.png" alt="bd5f4e41-influxdata5" /></p>
+
+<p>The process repeats recurcively until the new approximation for the polyline has been formed.</p>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/82113279-7ef0d600-9772-11ea-84c5-0e28e4938f38.gif" alt="rdp" /></p>
+
+<h3 id="pseudocode">Pseudocode</h3>
+
+<p>The Pseudocode of Ramer–Douglas–Peucker Algorithm :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function DouglasPeucker(PointList[], epsilon)
+    // Find the point with the maximum distance
+    dmax = 0
+    index = 0
+    end = length(PointList)
+    for i = 2 to (end - 1) {
+        d = perpendicularDistance(PointList[i], Line(PointList[1], PointList[end]))
+        if (d &gt; dmax) {
+            index = i
+            dmax = d
+        }
+    }
+
+    ResultList[] = empty;
+
+    // If max distance is greater than epsilon, recursively simplify
+    if (dmax &gt; epsilon) {
+        // Recursive call
+        recResults1[] = DouglasPeucker(PointList[1...index], epsilon)
+        recResults2[] = DouglasPeucker(PointList[index...end], epsilon)
+
+        // Build the result list
+        ResultList[] = {recResults1[1...length(recResults1) - 1], recResults2[1...length(recResults2)]}
+    } else {
+        ResultList[] = {PointList[1], PointList[end]}
+    }
+    // Return the result
+    return ResultList[]
+end
+</code></pre></div></div>
+
+<h3 id="complexity">Complexity</h3>
+
+<p>The running time of Ramer–Douglas–Peucker Algorithm when a polyline consist of <em>n-1</em> segments and <em>n</em> vertices is given by the reccurence <em>T(n)=T(i+1)+T(n-i)+O(n)</em> where is the value of Index in peudocode.</p>
+
+<p>In worst case, the algorithm has a time complexity of  <strong>O(n²)</strong>.</p>
+
+<p>In best case, it has a time complexity of <strong>O(n log(n))</strong> .</p>
+
+<h3 id="applications">Applications</h3>
+
+<p>This algorithms is used for proccessing <em>vector graphics</em> and and <em>cartographic generalization</em>. It is widely used in Robotics to perform simplification and denoising of range data accquired by a rotating range scanner.</p>
+
+<h3 id="example-of-ramerdouglaspeucker-algorithm">Example of Ramer–Douglas–Peucker Algorithm</h3>
+
+<iframe height="600px" width="100%" src="https://repl.it/@ayanbag/rgp-algo?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<p>Download the code <a href="https://github.com/ayanbag/rdp-algorithm">here</a></p>
+
+</article>
+
+  <span class="post-date">
+  Written on
+  
+  May
+  16th,
+  2020
+  by
+  
+    Ayan Bag
+  
+</span>
+
+
+
+  <!-- <div class="post-date"></div>
+<div class="sharing-icons">
+  <a href="https://twitter.com/intent/tweet?text=Ramer–Douglas–Peucker Algorithm&amp;url=/rdp-algo" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=/rdp-algo&amp;title=Ramer–Douglas–Peucker Algorithm" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+</div> -->
+
+
+
+
+
+      </div>
+      <footer class="footer">
+  
+  
+  
+    <a href="https://scholar.google.com/citations?user=IIdc_5gAAAAJ&hl=en" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.github.com/ayanbag" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="http://www.linkedin.com/in/ayanbag/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:ayanbag9474@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  <div class="footer-description"><a href="/">Ayan Bag</a></div>
+</footer>
+
+    </div>
+  </body>
+</html>

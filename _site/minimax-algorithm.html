@@ -1,0 +1,654 @@
+<!doctype html>
+<html>
+  <head>
+  <!-- <title>
+    
+      Unbeatable Tic-Tac-Toe with Minimax Algorithm | ayanbag
+    
+  </title> -->
+  <title>
+    
+      Unbeatable Tic-Tac-Toe with Minimax Algorithm
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="ayanbag" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="ayanbag |   ase @ tcs"/>
+  //-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+    MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      });
+  </script>
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Unbeatable Tic-Tac-Toe with Minimax Algorithm | ayanbag</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Unbeatable Tic-Tac-Toe with Minimax Algorithm" />
+<meta name="author" content="Ayan Bag" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Since the advent of Artificial Algorithms, the game playing has been one of the most interesting part of Artificial Intelligence. In 1947, a computer named “Deep Blue” defeated reigning world chess champion Garry Kasprov is a defining moment in the history of AI. But the great minds behind this computer started investing and publishing in this subject nearly six decades earlier. Alan Turing known as the father of theoretical algorithm and artificial intelligence is credited with provoking the investigation dating all the way back to the 1940s." />
+<meta property="og:description" content="Since the advent of Artificial Algorithms, the game playing has been one of the most interesting part of Artificial Intelligence. In 1947, a computer named “Deep Blue” defeated reigning world chess champion Garry Kasprov is a defining moment in the history of AI. But the great minds behind this computer started investing and publishing in this subject nearly six decades earlier. Alan Turing known as the father of theoretical algorithm and artificial intelligence is credited with provoking the investigation dating all the way back to the 1940s." />
+<link rel="canonical" href="http://localhost:4000/minimax-algorithm" />
+<meta property="og:url" content="http://localhost:4000/minimax-algorithm" />
+<meta property="og:site_name" content="ayanbag" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-02T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Unbeatable Tic-Tac-Toe with Minimax Algorithm" />
+<script type="application/ld+json">
+{"headline":"Unbeatable Tic-Tac-Toe with Minimax Algorithm","dateModified":"2020-06-02T00:00:00+05:30","datePublished":"2020-06-02T00:00:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/minimax-algorithm"},"author":{"@type":"Person","name":"Ayan Bag"},"url":"http://localhost:4000/minimax-algorithm","@type":"BlogPosting","description":"Since the advent of Artificial Algorithms, the game playing has been one of the most interesting part of Artificial Intelligence. In 1947, a computer named “Deep Blue” defeated reigning world chess champion Garry Kasprov is a defining moment in the history of AI. But the great minds behind this computer started investing and publishing in this subject nearly six decades earlier. Alan Turing known as the father of theoretical algorithm and artificial intelligence is credited with provoking the investigation dating all the way back to the 1940s.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+  <h3 class="header-title">
+    <!--<img src="../favicon.ico" alt="Myself." width="30">-->
+    <a href="/">Ayan Bag</a>
+    <small class="header-subtitle">  ase @ tcs</small>
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/about.html">About</a>
+    
+      <a href="/projects.html">Projects</a>
+    
+      <a href="/publications.html">Publications</a>
+    
+      <a href="/../assets/resume.pdf">Resume</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://scholar.google.com/citations?user=IIdc_5gAAAAJ&hl=en" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.github.com/ayanbag" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="http://www.linkedin.com/in/ayanbag/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:ayanbag9474@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  </nav> 
+</div>
+
+  </h3>
+</header>
+
+      <div class="content-container">
+        <h1>
+  Unbeatable Tic-Tac-Toe with Minimax Algorithm
+</h1>
+
+<article>
+  <p>Since the advent of Artificial Algorithms, the game playing has been one of the most interesting part of Artificial Intelligence. In 1947, a computer named “Deep Blue” defeated reigning world chess champion Garry Kasprov is a defining moment in the history of AI. But the great minds behind this computer started investing and publishing in this subject nearly six decades earlier. <strong>Alan Turing</strong> known as the father of theoretical algorithm and artificial intelligence is credited with provoking the investigation dating all the way back to the 1940s.</p>
+
+<p>Games such as chess, tic-tac-toe, and Go are interesting because they offer a pure abstraction of the competition between the two armies and this abstraction makes games playing an attractive area for AI research.</p>
+
+<p>However, this article will focus on one of the general decision-making strategy used by computers across a variety of strategic games, like Chess , checkers and many more.</p>
+
+<p>This general-strategy is a widely used algorithm in game theory, called the <strong>Minimax Algorithm</strong>.</p>
+
+<h3 id="what-is-minimax-algorithm-">What is Minimax Algorithm ?</h3>
+
+<p><strong>Minimax</strong> is a kind of backtracking algorithm that is used in decision making and game theory to choose an optimal move for a player assuming that the opponent is also playing optimally.</p>
+
+<p>The theory behind the <strong>Minimax Algorithm</strong> is that the algorithm’s opponents will try to minimize whatever value the algorithm is trying to maximize. Thus, the computer should make moves which leaves its opponent capable of doing the least damage.</p>
+
+<p>In ideal case i.e, the computer has infinite time and infinite storage capacity, the computer will investigate every possible outcome from the game current state as well as the path taken to reach the those states and assign those outcomes value. For a win-or-lose game like chess or tic-tac-toe, there are only three possible values-win, lose, or draw (often assigned numeric values of 1, -1, and 0 respectively)–but for other games like backgammon or poker with a “score” to maximize, the scores themselves are used. Then the computer evaluates which is the best possible outcome for the computer’s opponents, starting bottom. By assuming that if the game state is reached, its opponent will make move which will lead to the opponent’s best outcome which is the worse for the computer. Thus it knows its opponents future moves, and have a concrete idea of what the final state of the game will be if the second-last-position is reached. Then, the computer will treat that position of the terminal node of that value, even though it is not actually a terminal value. This process repeated a level higher, and so on. Ultimately, the computer has all the options available in which it can assign a value and the computer simply picks the highest value and takes action.</p>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/83515724-7975e880-a4f3-11ea-9630-a41f21d9a103.gif" alt="" /></p>
+
+<h3 id="coding-an-unbeatable-tic-tac-toe-ai">Coding an unbeatable Tic Tac Toe AI</h3>
+
+<p>In our excecution of Minimax algorithm for building an AI to solve Tic-Tac-Toe, it works by visuallizing all future possible states of the board and constructs it in the form of a tree. When the current board is given to the algorithm i.e the roots of the tree, it splits into ‘n’ branches (where n denotes the number of move that can be choosen by the algorithm). If any of these news states is a terminal state, no further splits are performed for this state and it is assigned a score in the following way :</p>
+
+<ul>
+  <li>Score = +1 (if the computer wins)</li>
+  <li>Score = -1 (if the computer loses)</li>
+  <li>Score = 0 (if a draw happens)</li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/28982255/83522588-82b88280-a4fe-11ea-975e-44dd1a632214.png" alt="" /></p>
+
+<p>However if there is no terminal states, then each of this new states is considered as new roots and they give rise a tree of thier own. Being a 2 player game, player take turn alternatively, therefore whenever we go one level deeper in the network, we need to change the player which would be placed in one of the empty cell. By this way, we can visualize the moves of our opponent as result of our moves. The algorithm will evaluate the best move to be choose so that it will gain a maximum score when it is the computer’s turn and the minimum score when it is its opponent’s/human’s turn.</p>
+
+<p>The Code of Tic-Tac-Toe :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Import libraries
+</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># This class represent a tic tac to game
+</span><span class="k">class</span> <span class="nc">TicTacToeGame</span><span class="p">:</span>
+
+    <span class="c1"># Create a new game
+</span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rows</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">columns</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">goal</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">max_depth</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+        
+        <span class="c1"># Create the game state
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">tiles</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">inverted_tiles</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">tile</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">columns</span><span class="p">):</span>
+                <span class="n">row</span> <span class="o">+=</span> <span class="s">'.'</span>
+                <span class="n">tile</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="p">.</span><span class="n">tiles</span><span class="p">[</span><span class="n">tile</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+                <span class="bp">self</span><span class="p">.</span><span class="n">inverted_tiles</span><span class="p">[(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="n">tile</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+        <span class="c1"># Set the number of noughts and crosses in a row that is needed to win the game
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">goal</span> <span class="o">=</span> <span class="n">goal</span>
+
+        <span class="c1"># Create vectors
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">vectors</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
+
+        <span class="c1"># Set lengths
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">rows</span> <span class="o">=</span> <span class="n">rows</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">max_row_index</span> <span class="o">=</span> <span class="n">rows</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">max_columns_index</span> <span class="o">=</span> <span class="n">columns</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">max_depth</span> <span class="o">=</span> <span class="n">max_depth</span>
+
+        <span class="c1"># Heuristics for cutoff
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">winning_positions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">get_winning_positions</span><span class="p">()</span>
+
+        <span class="c1"># Set the starting player at random
+</span>        <span class="c1">#self.player = 'O'
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">([</span><span class="s">'X'</span><span class="p">,</span> <span class="s">'O'</span><span class="p">])</span>
+
+    <span class="c1"># Get winning positions
+</span>    <span class="k">def</span> <span class="nf">get_winning_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="c1"># Loop the board
+</span>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">rows</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">columns</span><span class="p">):</span>
+                
+                <span class="c1"># Loop vectors
+</span>                <span class="k">for</span> <span class="n">vector</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">vectors</span><span class="p">:</span>
+                    
+                    <span class="c1"># Get the start position
+</span>                    <span class="n">sy</span><span class="p">,</span> <span class="n">sx</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+                    <span class="c1"># Get vector deltas
+</span>                    <span class="n">dy</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">vector</span>
+
+                    <span class="c1"># Create a counter
+</span>                    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+                    <span class="c1"># Loop until we are outside the board
+</span>                    <span class="n">positions</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+
+                        <span class="c1"># Add the position
+</span>                        <span class="n">positions</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">inverted_tiles</span><span class="p">.</span><span class="n">get</span><span class="p">((</span><span class="n">sy</span><span class="p">,</span> <span class="n">sx</span><span class="p">)))</span>
+
+                        <span class="c1"># Check if we have a winning position
+</span>                        <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="p">.</span><span class="n">goal</span><span class="p">):</span>
+
+                            <span class="c1"># Add winning positions
+</span>                            <span class="bp">self</span><span class="p">.</span><span class="n">winning_positions</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+
+                            <span class="c1"># Break out from the loop
+</span>                            <span class="k">break</span>
+
+                        <span class="c1"># Update the position
+</span>                        <span class="n">sy</span> <span class="o">+=</span> <span class="n">dy</span>
+                        <span class="n">sx</span> <span class="o">+=</span> <span class="n">dx</span>
+                
+                        <span class="c1"># Check if the loop should terminate
+</span>                        <span class="k">if</span><span class="p">(</span><span class="n">sy</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sy</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">max_row_index</span> <span class="ow">or</span> <span class="n">sx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">max_columns_index</span><span class="p">):</span>
+                            <span class="k">break</span>
+
+    <span class="c1"># Play the game
+</span>    <span class="k">def</span> <span class="nf">play</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="c1"># Variables
+</span>        <span class="n">result</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="c1"># Create an infinite loop
+</span>        <span class="k">print</span><span class="p">(</span><span class="s">'Starting board'</span><span class="p">)</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+
+            <span class="c1"># Draw the state
+</span>            <span class="bp">self</span><span class="p">.</span><span class="n">print_state</span><span class="p">()</span>
+
+            <span class="c1"># Get a move from a player
+</span>            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">player</span> <span class="o">==</span> <span class="s">'X'</span><span class="p">):</span> <span class="c1"># AI
+</span>
+                <span class="c1"># Print AI move
+</span>                <span class="k">print</span><span class="p">(</span><span class="s">'Player X moving (AI) ...'</span><span class="p">)</span>
+
+                <span class="c1"># Get the best move
+</span>                <span class="nb">max</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">depth</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="n">sys</span><span class="p">.</span><span class="n">maxsize</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">maxsize</span><span class="p">)</span>
+
+                <span class="c1"># Get a heuristic move at cutoff
+</span>                <span class="k">print</span><span class="p">(</span><span class="s">'Depth: {0}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">depth</span><span class="p">))</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">depth</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">max_depth</span><span class="p">):</span>
+                    <span class="n">py</span><span class="p">,</span> <span class="n">px</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">get_best_move</span><span class="p">()</span>
+
+                <span class="c1"># Make a move
+</span>                <span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">py</span><span class="p">][</span><span class="n">px</span><span class="p">]</span> <span class="o">=</span> <span class="s">'X'</span>
+
+                <span class="c1"># Check if the game has ended, break out from the loop in that case
+</span>                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">game_ended</span><span class="p">()</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
+                    <span class="k">break</span>
+
+                <span class="c1"># Change turn
+</span>                <span class="bp">self</span><span class="p">.</span><span class="n">player</span> <span class="o">=</span> <span class="s">'O'</span>
+
+            <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">player</span> <span class="o">==</span> <span class="s">'O'</span><span class="p">):</span> <span class="c1"># Human player
+</span>                
+                <span class="c1"># Print turn
+</span>                <span class="k">print</span><span class="p">(</span><span class="s">'Player O moving (Human) ...'</span><span class="p">)</span>
+
+                <span class="c1"># Get a recommended move
+</span>                <span class="nb">min</span><span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">px</span><span class="p">,</span> <span class="n">depth</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="nb">min</span><span class="p">(</span><span class="o">-</span><span class="n">sys</span><span class="p">.</span><span class="n">maxsize</span><span class="p">,</span> <span class="n">sys</span><span class="p">.</span><span class="n">maxsize</span><span class="p">)</span>
+
+                <span class="c1"># Get a heuristic move at cutoff
+</span>                <span class="k">print</span><span class="p">(</span><span class="s">'Depth: {0}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">depth</span><span class="p">))</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">depth</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">max_depth</span><span class="p">):</span>
+                    <span class="n">py</span><span class="p">,</span> <span class="n">px</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">get_best_move</span><span class="p">()</span>
+
+                <span class="c1"># Print a recommendation
+</span>                <span class="k">print</span><span class="p">(</span><span class="s">'Recommendation: {0}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">inverted_tiles</span><span class="p">.</span><span class="n">get</span><span class="p">((</span><span class="n">py</span><span class="p">,</span> <span class="n">px</span><span class="p">))))</span>
+
+                <span class="c1"># Get input
+</span>                <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">'Make a move (tile number): '</span><span class="p">))</span>
+                <span class="n">tile</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">tiles</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+                <span class="c1"># Check if the move is legal
+</span>                <span class="k">if</span><span class="p">(</span><span class="n">tile</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
+                    
+                    <span class="c1"># Make a move
+</span>                    <span class="n">py</span><span class="p">,</span> <span class="n">px</span> <span class="o">=</span> <span class="n">tile</span>
+                    <span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">py</span><span class="p">][</span><span class="n">px</span><span class="p">]</span> <span class="o">=</span> <span class="s">'O'</span>
+
+                    <span class="c1"># Check if the game has ended, break out from the loop in that case
+</span>                    <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">game_ended</span><span class="p">()</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
+                        <span class="k">break</span>
+
+                    <span class="c1"># Change turn
+</span>                    <span class="bp">self</span><span class="p">.</span><span class="n">player</span> <span class="o">=</span> <span class="s">'X'</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">'Move is not legal, try again.'</span><span class="p">)</span>
+
+        <span class="c1"># Print result
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">print_state</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Winner is player: {0}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+
+    <span class="c1"># An evaluation function to get the best move based on heuristics
+</span>    <span class="k">def</span> <span class="nf">get_best_move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="c1"># Create an heuristic dictionary
+</span>        <span class="n">heuristics</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Get all empty cells
+</span>        <span class="n">empty_cells</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">rows</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">columns</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="s">'.'</span><span class="p">):</span>
+                    <span class="n">empty_cells</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+
+        <span class="c1"># Loop empty positions
+</span>        <span class="k">for</span> <span class="n">empty</span> <span class="ow">in</span> <span class="n">empty_cells</span><span class="p">:</span>
+
+            <span class="c1"># Get numbered position
+</span>            <span class="n">number</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">inverted_tiles</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">empty</span><span class="p">)</span>
+
+            <span class="c1"># Loop winning positions
+</span>            <span class="k">for</span> <span class="n">win</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">winning_positions</span><span class="p">:</span>
+
+                <span class="c1"># Check if number is in a winning position
+</span>                <span class="k">if</span><span class="p">(</span><span class="n">number</span> <span class="ow">in</span> <span class="n">win</span><span class="p">):</span>
+
+                    <span class="c1"># Calculate the number of X:s and O:s in the winning position
+</span>                    <span class="n">player_x</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="n">player_o</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="n">start_score</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="k">for</span> <span class="n">box</span> <span class="ow">in</span> <span class="n">win</span><span class="p">:</span>
+
+                        <span class="c1"># Get the position
+</span>                        <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">tiles</span><span class="p">[</span><span class="n">box</span><span class="p">]</span>
+
+                        <span class="c1"># Count X:s and O:s
+</span>                        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="s">'X'</span><span class="p">):</span>
+                            <span class="n">player_x</span> <span class="o">+=</span> <span class="n">start_score</span> <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">player</span> <span class="o">==</span> <span class="s">'X'</span> <span class="k">else</span> <span class="n">start_score</span> <span class="o">*</span> <span class="mi">2</span>
+                            <span class="n">start_score</span> <span class="o">*=</span> <span class="mi">10</span>
+                        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="s">'O'</span><span class="p">):</span>
+                            <span class="n">player_o</span> <span class="o">+=</span> <span class="n">start_score</span> <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">player</span> <span class="o">==</span> <span class="s">'O'</span> <span class="k">else</span> <span class="n">start_score</span> <span class="o">*</span> <span class="mi">2</span>
+                            <span class="n">start_score</span> <span class="o">*=</span> <span class="mi">10</span>
+
+                    <span class="c1"># Save heuristic
+</span>                    <span class="k">if</span><span class="p">(</span><span class="n">player_x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">player_o</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+
+                        <span class="c1"># Calculate a score
+</span>                        <span class="n">score</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">player_x</span><span class="p">,</span> <span class="n">player_o</span><span class="p">)</span> <span class="o">+</span> <span class="n">start_score</span>
+
+                        <span class="c1"># Update the score
+</span>                        <span class="k">if</span><span class="p">(</span><span class="n">heuristics</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
+                            <span class="n">heuristics</span><span class="p">[</span><span class="n">number</span><span class="p">]</span> <span class="o">+=</span> <span class="n">score</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">heuristics</span><span class="p">[</span><span class="n">number</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span>
+
+        <span class="c1"># Get the best move from the heuristic dictionary
+</span>        <span class="n">best_move</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">(</span><span class="n">empty_cells</span><span class="p">)</span>
+        <span class="n">best_count</span> <span class="o">=</span> <span class="o">-</span><span class="n">sys</span><span class="p">.</span><span class="n">maxsize</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">heuristics</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">value</span> <span class="o">&gt;</span> <span class="n">best_count</span><span class="p">):</span>
+                <span class="n">best_move</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">tiles</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+                <span class="n">best_count</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="c1"># Return the best move
+</span>        <span class="k">return</span> <span class="n">best_move</span>
+
+    <span class="c1"># Check if the game has ended
+</span>    <span class="k">def</span> <span class="nf">game_ended</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+        <span class="c1"># Check if a player has won
+</span>        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">player_has_won</span><span class="p">()</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">result</span>
+
+        <span class="c1"># Check if the board is full
+</span>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">rows</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">columns</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="s">'.'</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="bp">None</span>
+
+        <span class="c1"># Return a tie
+</span>        <span class="k">return</span> <span class="s">'It is a tie!'</span>
+       
+    <span class="c1"># Check if a player has won
+</span>    <span class="k">def</span> <span class="nf">player_has_won</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        
+        <span class="c1"># Loop the board
+</span>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">rows</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">columns</span><span class="p">):</span>
+                
+                <span class="c1"># Loop vectors
+</span>                <span class="k">for</span> <span class="n">vector</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">vectors</span><span class="p">:</span>
+                    
+                    <span class="c1"># Get the start position
+</span>                    <span class="n">sy</span><span class="p">,</span> <span class="n">sx</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+                    <span class="c1"># Get vector deltas
+</span>                    <span class="n">dy</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">vector</span>
+
+                    <span class="c1"># Create counters
+</span>                    <span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="n">player_x</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="n">player_o</span> <span class="o">=</span> <span class="mi">0</span>
+
+                    <span class="c1"># Loop until we are outside the board or have moved the number of steps in the goal
+</span>                    <span class="k">while</span> <span class="n">steps</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">goal</span><span class="p">:</span>
+
+                        <span class="c1"># Add steps
+</span>                        <span class="n">steps</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                        <span class="c1"># Check if a player has a piece in the tile
+</span>                        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">sy</span><span class="p">][</span><span class="n">sx</span><span class="p">]</span> <span class="o">==</span> <span class="s">'X'</span><span class="p">):</span>
+                            <span class="n">player_x</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="k">elif</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">sy</span><span class="p">][</span><span class="n">sx</span><span class="p">]</span> <span class="o">==</span> <span class="s">'O'</span><span class="p">):</span>
+                            <span class="n">player_o</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                        <span class="c1"># Update the position
+</span>                        <span class="n">sy</span> <span class="o">+=</span> <span class="n">dy</span>
+                        <span class="n">sx</span> <span class="o">+=</span> <span class="n">dx</span>
+                
+                        <span class="c1"># Check if the loop should terminate
+</span>                        <span class="k">if</span><span class="p">(</span><span class="n">sy</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sy</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">max_row_index</span> <span class="ow">or</span> <span class="n">sx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">max_columns_index</span><span class="p">):</span>
+                            <span class="k">break</span>
+
+                    <span class="c1"># Check if we have a winner
+</span>                    <span class="k">if</span><span class="p">(</span><span class="n">player_x</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="p">.</span><span class="n">goal</span><span class="p">):</span>
+                        <span class="k">return</span> <span class="s">'X'</span>
+                    <span class="k">elif</span><span class="p">(</span><span class="n">player_o</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="p">.</span><span class="n">goal</span><span class="p">):</span>
+                        <span class="k">return</span> <span class="s">'O'</span>
+
+        <span class="c1"># Return None if no winner is found
+</span>        <span class="k">return</span> <span class="bp">None</span>
+
+    <span class="c1"># Get a min value (O)
+</span>    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span><span class="nb">int</span><span class="o">=-</span><span class="n">sys</span><span class="p">.</span><span class="n">maxsize</span><span class="p">,</span> <span class="n">beta</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="n">sys</span><span class="p">.</span><span class="n">maxsize</span><span class="p">,</span> <span class="n">depth</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        
+        <span class="c1"># Variables
+</span>        <span class="n">min_value</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">maxsize</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">bx</span> <span class="o">=</span> <span class="bp">None</span>
+        
+        <span class="c1"># Check if the game has ended
+</span>        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">game_ended</span><span class="p">()</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="s">'X'</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">depth</span>
+            <span class="k">elif</span> <span class="n">result</span> <span class="o">==</span> <span class="s">'O'</span><span class="p">:</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">depth</span>
+            <span class="k">elif</span> <span class="n">result</span> <span class="o">==</span> <span class="s">'It is a tie!'</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">depth</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">depth</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">max_depth</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">depth</span>
+
+        <span class="c1"># Loop the board
+</span>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">rows</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">columns</span><span class="p">):</span>
+
+                <span class="c1"># Check if the tile is empty
+</span>                <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="s">'.'</span><span class="p">):</span>
+
+                    <span class="c1"># Make a move
+</span>                    <span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="s">'O'</span>
+
+                    <span class="c1"># Get max value
+</span>                    <span class="nb">max</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">depth</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                    
+                    <span class="c1"># Set min value to max value if it is lower than curren min value
+</span>                    <span class="k">if</span> <span class="p">(</span><span class="nb">max</span> <span class="o">&lt;</span> <span class="n">min_value</span><span class="p">):</span>
+                        <span class="n">min_value</span> <span class="o">=</span> <span class="nb">max</span>
+                        <span class="n">by</span> <span class="o">=</span> <span class="n">y</span>
+                        <span class="n">bx</span> <span class="o">=</span> <span class="n">x</span>
+                        
+                    <span class="c1"># Reset the tile
+</span>                    <span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="s">'.'</span>
+
+                    <span class="c1"># Do an alpha test
+</span>                    <span class="k">if</span> <span class="p">(</span><span class="n">min_value</span> <span class="o">&lt;=</span> <span class="n">alpha</span><span class="p">):</span>
+                        <span class="k">return</span> <span class="n">min_value</span><span class="p">,</span> <span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">depth</span>
+
+                    <span class="c1"># Do a beta test
+</span>                    <span class="k">if</span> <span class="p">(</span><span class="n">min_value</span> <span class="o">&lt;</span> <span class="n">beta</span><span class="p">):</span>
+                        <span class="n">beta</span> <span class="o">=</span> <span class="n">min_value</span>
+
+        <span class="c1"># Return min value
+</span>        <span class="k">return</span> <span class="n">min_value</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bx</span><span class="p">,</span> <span class="n">depth</span>
+
+    <span class="c1"># Get max value (X)
+</span>    <span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span><span class="nb">int</span><span class="o">=-</span><span class="n">sys</span><span class="p">.</span><span class="n">maxsize</span><span class="p">,</span> <span class="n">beta</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="n">sys</span><span class="p">.</span><span class="n">maxsize</span><span class="p">,</span> <span class="n">depth</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+
+        <span class="c1"># Variables
+</span>        <span class="n">max_value</span> <span class="o">=</span> <span class="o">-</span><span class="n">sys</span><span class="p">.</span><span class="n">maxsize</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">bx</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="c1"># Check if the game has ended
+</span>        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">game_ended</span><span class="p">()</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="s">'X'</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">depth</span>
+            <span class="k">elif</span> <span class="n">result</span> <span class="o">==</span> <span class="s">'O'</span><span class="p">:</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">depth</span>
+            <span class="k">elif</span> <span class="n">result</span> <span class="o">==</span> <span class="s">'It is a tie!'</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">depth</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">depth</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">max_depth</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">depth</span>
+
+        <span class="c1"># Loop the board
+</span>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">rows</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">columns</span><span class="p">):</span>
+
+                <span class="c1"># Check if the current tile is empty
+</span>                <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="s">'.'</span><span class="p">):</span>
+                    
+                    <span class="c1"># Add a piece to the board
+</span>                    <span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="s">'X'</span>
+
+                    <span class="c1"># Set max value to min value if min value is greater than current max value
+</span>                    <span class="nb">min</span><span class="p">,</span> <span class="n">min_y</span><span class="p">,</span> <span class="n">min_x</span><span class="p">,</span> <span class="n">depth</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="nb">min</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+                    <span class="c1"># Adjust the max value
+</span>                    <span class="k">if</span> <span class="p">(</span><span class="nb">min</span> <span class="o">&gt;</span> <span class="n">max_value</span><span class="p">):</span>
+                        <span class="n">max_value</span> <span class="o">=</span> <span class="nb">min</span>
+                        <span class="n">by</span> <span class="o">=</span> <span class="n">y</span>
+                        <span class="n">bx</span> <span class="o">=</span> <span class="n">x</span>
+
+                    <span class="c1"># Reset the tile
+</span>                    <span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="s">'.'</span>
+
+                    <span class="c1"># Do a beta test
+</span>                    <span class="k">if</span> <span class="p">(</span><span class="n">max_value</span> <span class="o">&gt;=</span> <span class="n">beta</span><span class="p">):</span>
+                        <span class="k">return</span> <span class="n">max_value</span><span class="p">,</span> <span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">depth</span>
+
+                    <span class="c1"># Do an alpha test
+</span>                    <span class="k">if</span> <span class="p">(</span><span class="n">max_value</span> <span class="o">&gt;</span> <span class="n">alpha</span><span class="p">):</span>
+                        <span class="n">alpha</span> <span class="o">=</span> <span class="n">max_value</span>
+
+        <span class="c1"># Return max value
+</span>        <span class="k">return</span> <span class="n">max_value</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bx</span><span class="p">,</span> <span class="n">depth</span>
+
+    <span class="c1"># Print the current game state
+</span>    <span class="k">def</span> <span class="nf">print_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">rows</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'| '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">columns</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">!=</span> <span class="s">'.'</span><span class="p">):</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">' {0}  | '</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]),</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">digit</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">inverted_tiles</span><span class="p">.</span><span class="n">get</span><span class="p">((</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">inverted_tiles</span><span class="p">.</span><span class="n">get</span><span class="p">((</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">))))</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="s">' '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">inverted_tiles</span><span class="p">.</span><span class="n">get</span><span class="p">((</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)))</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">'{0}  | '</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">digit</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">''</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">()</span>
+
+<span class="c1"># The main entry point for this module
+</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="c1"># Create a game
+</span>    <span class="c1">#game = TicTacToeGame(7, 6, 4, 1000)
+</span>    <span class="n">game</span> <span class="o">=</span> <span class="n">TicTacToeGame</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+    <span class="c1"># Play the game
+</span>    <span class="n">game</span><span class="p">.</span><span class="n">play</span><span class="p">()</span>
+
+<span class="c1"># Tell python to run main method
+</span><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span> <span class="n">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="live-code">Live Code</h3>
+
+<iframe height="550px" width="100%" src="https://repl.it/@ayanbag/tictactoe?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<h3 id="helpfull-resources">Helpfull Resources</h3>
+
+<ul>
+  <li>https://www.neverstopbuilding.com/blog/minimax</li>
+  <li>https://www.freecodecamp.org/news/how-to-make-your-tic-tac-toe-game-unbeatable-by-using-the-minimax-algorithm-9d690bad4b37/</li>
+  <li>http://www.shei.io/recursion-minimax-algorithm/</li>
+</ul>
+
+</article>
+
+  <span class="post-date">
+  Written on
+  
+  June
+  2nd
+    ,
+  2020
+  by
+  
+    Ayan Bag
+  
+</span>
+
+
+
+  <!-- <div class="post-date"></div>
+<div class="sharing-icons">
+  <a href="https://twitter.com/intent/tweet?text=Unbeatable Tic-Tac-Toe with Minimax Algorithm&amp;url=/minimax-algorithm" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=/minimax-algorithm&amp;title=Unbeatable Tic-Tac-Toe with Minimax Algorithm" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+</div> -->
+
+
+
+
+
+      </div>
+      <footer class="footer">
+  
+  
+  
+    <a href="https://scholar.google.com/citations?user=IIdc_5gAAAAJ&hl=en" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="https://www.github.com/ayanbag" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="http://www.linkedin.com/in/ayanbag/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:ayanbag9474@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  <div class="footer-description"><a href="/">Ayan Bag</a></div>
+</footer>
+
+    </div>
+  </body>
+</html>

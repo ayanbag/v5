@@ -8,7 +8,7 @@ google-ID: ''
 
 menu:
 - {name: 'About',   url: 'about.html'}
-#- {name: 'Blog', url: 'blogposts.html'}
+#- {name: 'Blog', url: 'blogs.html'}
 - {name: 'Projects', url: 'projects.html'}
 - {name: 'Publications', url: 'publications.html'}
 - {name: 'Resume', url: '../assets/resume.pdf'}
