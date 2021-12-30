@@ -4,7 +4,7 @@ title: Namaste !
 permalink: /about
 redirect_from:
     - /index.html
-image: cmu-cs-self.png
+image: 
 ---
 
 I am a recent engineering grad, who finished his bachelor’s degree in Electronics and Communication from **K**alyani **G**overnment **E**ngineering **C**ollege and graduated in the summer of 2021.
