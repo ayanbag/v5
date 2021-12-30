@@ -1,0 +1,66 @@
+I"	<hr />
+<p>Dear Internet,</p>
+
+<p>Four days ago I accepted the offer to intern with the Siri Team at Apple. I shared this news on LinkedIn and have since then been overwhelmed by the wishes I have received. Many also posed queries about the interview process and the preparation required to crack it.</p>
+
+<p>In this post, I will share my experience along with the tips I have to prepare for such an interview.</p>
+
+<hr />
+
+<h3 id="note-this-is-not-a-masterclass">Note: This is not a masterclass</h3>
+
+<p>Before we start, let’s go over some basic considerations,</p>
+<ul>
+  <li>I interviewed for the <strong>AIML Intern</strong> position which is different from other roles (such as SDE) and therefore, this post might not reflect how the process looks for other roles.</li>
+  <li>Even within AI/ML, my research field is primarily focused on NLP and therefore, it is possible that the rounds look different for other fields.</li>
+  <li>Finally, each interviewer has a unique interviewing style and experiences/rounds may widely differ for the same role. Therefore, read my experience as only an <em>experience</em> and not a masterclass!</li>
+</ul>
+
+<hr />
+
+<h3 id="phase-one-pre-interview">Phase one: Pre-interview</h3>
+<p>I applied for the role early in October with a referral from a senior. I directly messaged him on LinkedIn and asked if he could refer me for the role. I heard back from a recruiter in the following month of November asking for my availability to schedule the interviews.</p>
+
+<p>I was told that <em>usually</em>, there are two rounds of virtual interviews but the team can have more if required.</p>
+
+<hr />
+
+<h3 id="phase-two-interviews">Phase two: Interviews</h3>
+
+<h4 id="1-live-coding">1. Live-coding</h4>
+<p>The first round was a live-coding round where I was asked to solve a coding problem on <a href="https://coderpad.io">coderpad.io</a> (one of my favourite live-coding platforms!) It was an array problem that I think would probably fall into <code class="language-plaintext highlighter-rouge">medium</code> category on <a href="https://leetcode.com">leetcode</a>. The interviewer was very interactive and swiftly answered all my clarification questions. After I solved the problem, he asked me the time complexity of the code. After solving the question, we were left with ~15 minutes (out of the allotted one hour) when the interviewer told me to get ready for the second question. My heart skipped a beat – there’s one more? There wasn’t. He was joking (<em>*sigh*</em>). We both laughed and he asked me if I had any questions for him. I asked a few questions and the interview ended.</p>
+
+<p>The next day I heard back from the recruiter – I had made it to the next round!</p>
+
+<!-- #### Round one: Coding -->
+
+<h4 id="reflections-from-round-1">Reflections from Round 1:</h4>
+<ul>
+  <li>Anecdotally, interviews for ML roles are not known to have difficult coding problems. Search for the most frequent company-specific lists online (I like Reddit for this!) and practice them properly before other problems.</li>
+  <li>While coding, use a debugger (<em>pdb</em> or the good ol’ <em>print</em>) if you are allowed to use one. For e.g., you can import pdb and also run your code on <em>coderpad.io</em>. Utilize it!</li>
+  <li>Interviewer is your friend – ask them clarification questions before you start coding. If you get stuck, don’t hesitate to ask for hints.</li>
+</ul>
+
+<h4 id="2-research-calibre">2. Research-calibre</h4>
+<p>The second round was totally research-based and involved open-ended modelling and design questions. In the words of the interviewer, the purpose of this round was <em>“to understand my thought process while approaching a problem.”</em></p>
+
+<p>In the beginning, he asked me to choose one area of ML or NLP that I was most confident about. He then asked me to give an overview of what I knew were the past and current state-of-the-art approaches/models in that area. Such a question could be as detailed as you want it to be. For e.g., a brief survey of seq2seq models could start from vanilla RNNs, touch upon LSTMs, attention-based RNNs and go up to the current transformers-based models such as BART and T5. This was followed by a few classic questions that I have now learnt to expect in every NLP interview – <em>what issues of RNNs do transformers solve?</em> <em>What are some of the issues with vanilla transformers?</em></p>
+
+<p>After gauging my breadth of knowledge in the area, the interviewer designed an open-ended problem based on the approaches I had mentioned before. For e.g., <em>how can we add additional contextual information to a summarization model?</em> We then discussed possible solutions to the problem for the rest of the interview (~35 mins.)</p>
+
+<p>I heard back from the recuiter the same day in the evening. He asked for my availability in the week – I was to expect some <em>“good news.”</em></p>
+
+<p>Good news: I got in!</p>
+
+<h4 id="reflections-from-round-2">Reflections from Round 2:</h4>
+<ul>
+  <li>This type of an interview is not a <em>viva-voce</em> but a discussion, therefore, interact with the interviewer. Besides your domain expertise, they also want to gauge your collaborative skills and whether you can work in a team. Try to work out the solution <em>together</em>.</li>
+  <li>Try to connect your ideas to your past projects. If you think of an approach X that could be used to solve a problem Y, perhaps you could mention one of your projects where you tried something similar to X, and it led to some improvements. This can demonstrate your prior experience, as well as, your ability to re-use your or someone else’s work – it is redundant to reinvent the wheel!</li>
+  <li>Know in depth the architecture and common issues associated with the models you have used in the past. For e.g., if you have used <em>transformers</em>, know the computational complexity of self-attention and how it increases quadratically with sequence-length.</li>
+  <li>Prepare a high-level summary of other similar models. This is not super-important but really helps in these design questions. For e.g., if you have used transformers, you might want to know a little about Transformers-XL and how it differs from the vanilla implementation.</li>
+</ul>
+
+<hr />
+
+<p>Have any comments or questions about this blog? Drop me an <a href="mailto:abhesrivastava@gmail.com">email</a>!</p>
+:ET
