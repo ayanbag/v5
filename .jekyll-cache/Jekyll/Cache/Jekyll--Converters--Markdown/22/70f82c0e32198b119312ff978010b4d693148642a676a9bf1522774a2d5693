@@ -1,4 +1,11 @@
-I"<h3 id="academic-projects-">Academic Projects :</h3>
+I"¨<h3 id="academic-projects-">Academic Projects :</h3>
+
+<p><strong><a href="https://github.com/ayanbag/Video_Classfication_Using_Single_Frame_CNN">Video Classification using Single Frame CNN</a> :</strong></p>
+
+<ul>
+  <li>Build a video classifier using <strong>Single Frame CNN</strong> technique, to classify videos against a set of categories or classes.</li>
+  <li>Our model is able to attain an accuracy of about 98% on the test set of UCF50 dataset</li>
+</ul>
 
 <p><strong><a href="https://github.com/ayanbag/Image_Captioning_using_RNN_and_CNN">Image Captioning Using RNN and CNN techniques</a> :</strong></p>
 

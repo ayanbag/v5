@@ -6,6 +6,11 @@ permalink: /projects
 
 ### Academic Projects :
 
+**[Video Classification using Single Frame CNN](https://github.com/ayanbag/Video_Classfication_Using_Single_Frame_CNN) :**
+
+- Build a video classifier using **Single Frame CNN** technique, to classify videos against a set of categories or classes.
+- Our model is able to attain **an accuracy of about 98%** on the test set based on UCF50 dataset
+
 **[Image Captioning Using RNN and CNN techniques](https://github.com/ayanbag/Image_Captioning_using_RNN_and_CNN) :**
 
 - Developed an **attention-based model** using Convolutional Neural Network Encoder and Recurrent Neural Network Decoder, which enables us to generate suitable caption for the given image.
