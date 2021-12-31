@@ -11,7 +11,7 @@ menu:
 #- {name: 'Blog', url: 'blogs.html'}
 - {name: 'Projects', url: 'projects.html'}
 - {name: 'Publications', url: 'publications.html'}
-- {name: 'Resume', url: '../assets/resume.pdf'}
+#- {name: 'Resume', url: '../assets/resume.pdf'}
 #- {name: 'Contact', url: 'contact.html'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
