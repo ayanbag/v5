@@ -42,5 +42,5 @@ In my free time, I learn whatever musical instrument I can lay my hands on inclu
 
 ### News
 
-<span style="color:brown">**[Aug 2021]**</span> &ensp; Joined Tata Consultancy Services as an Assistant System Engineer (ASE)
+<span style="color:brown">**[Aug 2021]**</span>&ensp;Joined Tata Consultancy Services as an Assistant System Engineer (ASE)
 
