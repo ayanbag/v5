@@ -37,39 +37,27 @@ when evaluated on unseen data.
 
 ---
 
-### Open Source Projects :
+### Major Personal Projects :
 
 - [GestureControl](https://github.com/ayanbag/GestureControl) - A Python app to control the mouse and sound of a computer using hand gestures using OpenCV framework and Mediapipe library
 - [ImageColorizer](https://github.com/ayanbag/ImageColorizer) - A Python app to colorize the black and white (grayscale) image to colorful image with OpenCV and Deep Learning
 - [Radio Signal Classification](https://github.com/ayanbag/classify_radio_signals) - Build and trained a convolutional neural network from scratch using Keras to classify deep space radio signals collected by the Allen Telescope Array at the SETI Institute.
 - [Euler Decode](https://eulerdecode.ayanbag.com/) - An online blog to help people in solving Project Euler challenges with my way of approach to those problems/challenges
 - [Graduate Admission Prediction (GAP)](http://gap.ayanbag.com/) - An analysis project based on my paper "A Comparative Study of Regression Algorithms for Predicting Graduate Admission to a University", to predict the chance of admission to a university for Master Program based on their academic profile
-- [Tic-Tac-Toe](https://tictactoe-ub.web.app/) - An unbeatable Tic-Tac-Toe A.I. game built with ReactJS
 - [Lets Draw !!](https://letsdraw.ayanbag.com/) - This is an A.I. Art Project based on SketchRNN Neural Network build with ml5.js to create A.I. generated doodles
-- [Covid19 Dashboard](https://covid19.ayanbag.com/) -  A simple dashboard to visualize covid19 affected regions
-- [MarkdownEdit](https://mde.ayanbag.com/) -  A simple, efficient and light-weight MarkdownEditor built with Marked.js
-- [Shutterbug-KGEC-Admin](https://github.com/shutterbugkgec/Shutterbug-admin) - Admin Panel of Shutterbug-KGEC
-- [Shutterbug-KGEC](https://www.shutterbugkgec.in/) - Portfolio site of our college photography club
+- [Covid19 Dashboard](https://covid19.ayanbag.com/) -  A simple dashboard to visualize covid19 affected regions 
 - [Orobot](https://ayanbag.github.io/orobot/) – A cryptocurrency knowledge chatbot made with SAP Conversational AI
-- [Spoon](https://spoontheme.netlify.app/) – The dark green theme for Visual Studio Code
 - [Pydl](https://github.com/ayanbag/pydl) – Command Line Utility to download music from Youtube , Soundcloud and many others sites
 - [PyCrypt](https://github.com/ayanbag/pycrypt) – Python package of cryptographic algorithms
-- [Blocker](https://github.com/ayanbag/Blocker) – A Chrome Extension to block Advertisement sites as well as helps to stop autoplay in Chrome
-- [Terminal Chat](https://github.com/ayanbag/Terminal_Chat_Console) – A console chatting application prototype with in-app realtime file transfer capabilities
-- [ayanbag.com](https://ayanbag.com) - This website
+
 
 ---
 
-### Design Projects :
+### Open Source Contribution(s) :
 
-- [Uber App Redesign](https://dribbble.com/shots/6830148-Uber-App-Design) - A simple design concept of Uber Ride App with using minimal elements.
-- [Clock Redesign](https://dribbble.com/shots/6742405-Clock-User-Interface) - A simple design of a clock app that we see or use in our phones daily
-- [Indigo App Redesign](https://dribbble.com/shots/6716023-Flight-Booking-App-Design) - My concept of a flight booking app for Indigo Airlines
-- [Xbox UI Redesign](https://youtu.be/i49O3tXn38g) - Xbox One UI Redesign by me
+**scikit-learn/scikit-learn :**
+- PR [#20798](https://github.com/scikit-learn/scikit-learn/pull/20798) : FIX attribute component_indices_ was not assigned to the write values in sklearn.kernel_approximation.Nystroem 
 
 ---
 
-### Hackathon Project(s) :
-
-- [Local Loop](https://github.com/ayanbag/Local-Loop) - Offline Shop Review System (Presented in TCS Engnix 2019 Hackathon)
-
+**Note :** For more of my projects and details, check out this [link](../other_projects/) or my [github profile](https://github.com/ayanbag)

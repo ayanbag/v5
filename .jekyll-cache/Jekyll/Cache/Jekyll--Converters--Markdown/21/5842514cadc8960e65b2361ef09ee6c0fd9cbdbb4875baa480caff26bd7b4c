@@ -1,4 +1,4 @@
-I"�<h3 id="academic-projects-">Academic Projects :</h3>
+I"T<h3 id="academic-projects-">Academic Projects :</h3>
 
 <p><strong><a href="https://github.com/ayanbag/Video_Classfication_Using_Single_Frame_CNN">Video Classification using Single Frame CNN</a> :</strong></p>
 
@@ -47,7 +47,7 @@ when evaluated on unseen data.</p>
 
 <hr />
 
-<h3 id="open-source-projects-">Open Source Projects :</h3>
+<h3 id="major-personal-projects-">Major Personal Projects :</h3>
 
 <ul>
   <li><a href="https://github.com/ayanbag/GestureControl">GestureControl</a> - A Python app to control the mouse and sound of a computer using hand gestures using OpenCV framework and Mediapipe library</li>
@@ -55,38 +55,23 @@ when evaluated on unseen data.</p>
   <li><a href="https://github.com/ayanbag/classify_radio_signals">Radio Signal Classification</a> - Build and trained a convolutional neural network from scratch using Keras to classify deep space radio signals collected by the Allen Telescope Array at the SETI Institute.</li>
   <li><a href="https://eulerdecode.ayanbag.com/">Euler Decode</a> - An online blog to help people in solving Project Euler challenges with my way of approach to those problems/challenges</li>
   <li><a href="http://gap.ayanbag.com/">Graduate Admission Prediction (GAP)</a> - An analysis project based on my paper “A Comparative Study of Regression Algorithms for Predicting Graduate Admission to a University”, to predict the chance of admission to a university for Master Program based on their academic profile</li>
-  <li><a href="https://tictactoe-ub.web.app/">Tic-Tac-Toe</a> - An unbeatable Tic-Tac-Toe A.I. game built with ReactJS</li>
   <li><a href="https://letsdraw.ayanbag.com/">Lets Draw !!</a> - This is an A.I. Art Project based on SketchRNN Neural Network build with ml5.js to create A.I. generated doodles</li>
   <li><a href="https://covid19.ayanbag.com/">Covid19 Dashboard</a> -  A simple dashboard to visualize covid19 affected regions</li>
-  <li><a href="https://mde.ayanbag.com/">MarkdownEdit</a> -  A simple, efficient and light-weight MarkdownEditor built with Marked.js</li>
-  <li><a href="https://github.com/shutterbugkgec/Shutterbug-admin">Shutterbug-KGEC-Admin</a> - Admin Panel of Shutterbug-KGEC</li>
-  <li><a href="https://www.shutterbugkgec.in/">Shutterbug-KGEC</a> - Portfolio site of our college photography club</li>
   <li><a href="https://ayanbag.github.io/orobot/">Orobot</a> – A cryptocurrency knowledge chatbot made with SAP Conversational AI</li>
-  <li><a href="https://spoontheme.netlify.app/">Spoon</a> – The dark green theme for Visual Studio Code</li>
   <li><a href="https://github.com/ayanbag/pydl">Pydl</a> – Command Line Utility to download music from Youtube , Soundcloud and many others sites</li>
   <li><a href="https://github.com/ayanbag/pycrypt">PyCrypt</a> – Python package of cryptographic algorithms</li>
-  <li><a href="https://github.com/ayanbag/Blocker">Blocker</a> – A Chrome Extension to block Advertisement sites as well as helps to stop autoplay in Chrome</li>
-  <li><a href="https://github.com/ayanbag/Terminal_Chat_Console">Terminal Chat</a> – A console chatting application prototype with in-app realtime file transfer capabilities</li>
-  <li><a href="https://ayanbag.com">ayanbag.com</a> - This website</li>
 </ul>
 
 <hr />
 
-<h3 id="design-projects-">Design Projects :</h3>
+<h3 id="open-source-contributions-">Open Source Contribution(s) :</h3>
 
+<p><strong>scikit-learn/scikit-learn :</strong></p>
 <ul>
-  <li><a href="https://dribbble.com/shots/6830148-Uber-App-Design">Uber App Redesign</a> - A simple design concept of Uber Ride App with using minimal elements.</li>
-  <li><a href="https://dribbble.com/shots/6742405-Clock-User-Interface">Clock Redesign</a> - A simple design of a clock app that we see or use in our phones daily</li>
-  <li><a href="https://dribbble.com/shots/6716023-Flight-Booking-App-Design">Indigo App Redesign</a> - My concept of a flight booking app for Indigo Airlines</li>
-  <li><a href="https://youtu.be/i49O3tXn38g">Xbox UI Redesign</a> - Xbox One UI Redesign by me</li>
+  <li>PR <a href="https://github.com/scikit-learn/scikit-learn/pull/20798">#20798</a> : FIX attribute component_indices_ was not assigned to the write values in sklearn.kernel_approximation.Nystroem</li>
 </ul>
 
 <hr />
 
-<h3 id="hackathon-projects-">Hackathon Project(s) :</h3>
-
-<ul>
-  <li><a href="https://github.com/ayanbag/Local-Loop">Local Loop</a> - Offline Shop Review System (Presented in TCS Engnix 2019 Hackathon)</li>
-</ul>
-
+<p><strong>Note :</strong> For more of my projects and details, check out this <a href="../other_projects/">link</a> or my <a href="https://github.com/ayanbag">github profile</a></p>
 :ET
