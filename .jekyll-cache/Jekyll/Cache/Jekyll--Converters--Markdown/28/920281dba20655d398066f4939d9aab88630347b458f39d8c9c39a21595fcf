@@ -1,4 +1,4 @@
-I"T<h3 id="academic-projects-">Academic Projects :</h3>
+I"ò<h3 id="academic-projects-">Academic Projects :</h3>
 
 <p><strong><a href="https://github.com/ayanbag/Video_Classfication_Using_Single_Frame_CNN">Video Classification using Single Frame CNN</a> :</strong></p>
 
@@ -69,6 +69,7 @@ when evaluated on unseen data.</p>
 <p><strong>scikit-learn/scikit-learn :</strong></p>
 <ul>
   <li>PR <a href="https://github.com/scikit-learn/scikit-learn/pull/20798">#20798</a> : FIX attribute component_indices_ was not assigned to the write values in sklearn.kernel_approximation.Nystroem</li>
+  <li>PR <a href="https://github.com/scikit-learn/scikit-learn/pull/22205">#22205</a> : DOC Ensures that compute_optics_graph passes numpydoc validation</li>
 </ul>
 
 <hr />
