@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Other Projects
-permalink: /other_projects
+permalink: /other-projects
 ---
 
 ### Other Personal Projects
