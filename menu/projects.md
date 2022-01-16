@@ -61,4 +61,4 @@ when evaluated on unseen data.
 
 ---
 
-**Note :** For more of my projects and details, check out this [link](../other_projects/) or my [github profile](https://github.com/ayanbag)
+**Note :** For more of my projects and details, check out this [link](../other-projects/) or my [github profile](https://github.com/ayanbag)
