@@ -1,6 +1,7 @@
-I"P<h3 id="scikit-learnscikit-learn-">scikit-learn/scikit-learn :</h3>
+I"ï<h3 id="scikit-learnscikit-learn-">scikit-learn/scikit-learn :</h3>
 <ul>
   <li>PR <a href="(https://github.com/scikit-learn/scikit-learn/pull/20798)">#20798</a> : FIX attribute component_indices_ was not assigned to the write values in sklearn.kernel_approximation.Nystroem</li>
+  <li>PR <a href="https://github.com/scikit-learn/scikit-learn/pull/22205">#22205</a> : DOC Ensures that compute_optics_graph passes numpydoc validations</li>
 </ul>
 
 <p><br />

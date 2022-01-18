@@ -1,4 +1,11 @@
-I"ò<h3 id="academic-projects-">Academic Projects :</h3>
+I"]<h3 id="academic-projects-">Academic Projects :</h3>
+
+<p><strong><a href="https://github.com/ayanbag/Multi_Object_Tracking_with_MobileNetSSD">Multi Object Tracking Using MobileNet SSD</a> :</strong></p>
+
+<ul>
+  <li>Implementation of Multi Object Tracking using a pretrained MobileNet SSD with dlib library and OpenCV in Python.</li>
+  <li>The code is written in Python and uses OpenCV and dlib libraries.</li>
+</ul>
 
 <p><strong><a href="https://github.com/ayanbag/Video_Classfication_Using_Single_Frame_CNN">Video Classification using Single Frame CNN</a> :</strong></p>
 
@@ -74,5 +81,5 @@ when evaluated on unseen data.</p>
 
 <hr />
 
-<p><strong>Note :</strong> For more of my projects and details, check out this <a href="../other_projects/">link</a> or my <a href="https://github.com/ayanbag">github profile</a></p>
+<p><strong>Note :</strong> For more of my projects and details, check out this <a href="../other-projects/">link</a> or my <a href="https://github.com/ayanbag">github profile</a></p>
 :ET

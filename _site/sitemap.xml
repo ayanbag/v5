@@ -50,7 +50,7 @@
 <loc>http://localhost:4000/contact</loc>
 </url>
 <url>
-<loc>http://localhost:4000/other_projects</loc>
+<loc>http://localhost:4000/other-projects</loc>
 </url>
 <url>
 <loc>http://localhost:4000/opensource</loc>

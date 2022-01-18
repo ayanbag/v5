@@ -6,6 +6,11 @@ permalink: /projects
 
 ### Academic Projects :
 
+**[Multi Object Tracking Using MobileNet SSD](https://github.com/ayanbag/Multi_Object_Tracking_with_MobileNetSSD) :**
+
+- Implementation of Multi Object Tracking using a pretrained **MobileNet SSD** caffe model.
+- The code is written in Python and uses OpenCV and dlib libraries.
+
 **[Video Classification using Single Frame CNN](https://github.com/ayanbag/Video_Classfication_Using_Single_Frame_CNN) :**
 
 - Build a video classifier using **Single Frame CNN** technique, to classify videos against a set of categories or classes.
