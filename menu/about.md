@@ -33,9 +33,9 @@ I was born and raised in [Durgapur](https://en.wikipedia.org/wiki/Durgapur), Ind
 
 In 2017, I moved to Kalyani, India to join Kalyani Government Engineering College (one of the best college under West Bengal Uniservsity of Technology) where I graduated from as a ECE major in 2021.
 
-In mid 2021, after I graduate I joined **Tata Consultancy Services** as an assistant system engineer and currently working with SAP CRM and various automation frameworks like Selenium etc. for manual and automation testing for e-commerce and retail applications
+In mid 2021, after I graduate I joined **Tata Consultancy Services** as an assistant system engineer and currently working with SAP ECC tools along with various automation frameworks like Selenium etc. for manual and automation testing for e-commerce and retail applications
 
-In my free time, I learn whatever musical instrument I can lay my hands on including but not limited to: Drums, Bansuri (Indian bamboo flute), keyboard, guitar and the ukulele.
+<!-- In my free time, I learn whatever musical instrument I can lay my hands on including but not limited to: Drums, Bansuri (Indian bamboo flute), keyboard, guitar and the ukulele. -->
 
 
 ---
