@@ -4,14 +4,14 @@ disqus:
   # disqus_shortname: 'https-lenpaul-github-io-lagrange'
 
 # If you are not using Google Analytics, please change 'google-ID' to an empty string
-google-ID: ''
+google-ID: 'UA-130647973-2'
 
 menu:
-- {name: 'About',   url: 'about/'}
-#- {name: 'Blog', url: 'blogs.html'}
-- {name: 'Projects', url: 'projects/'}
-- {name: 'Publications', url: 'publications/'}
-#- {name: 'Resume', url: '../assets/resume.pdf'}
+- {name: 'about',   url: 'about/'}
+- {name: 'projects', url: 'projects/'}
+- {name: 'publications', url: 'publications/'}
+- {name: 'blogs', url: 'blogs/'}
+- {name: 'resume', url: '../assets/resume.pdf'}
 #- {name: 'Contact', url: 'contact/'}
 #- {name: 'Opensource', url: 'opensource/'}
 
